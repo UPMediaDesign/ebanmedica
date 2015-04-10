@@ -1,0 +1,1616 @@
+/*===========================
+        CLASES GENERALES
+===========================*/
+@import "icons.css"
+@import "animate.css"
+@import url('http://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,300,100,700')
+
+$roboto = 'Roboto Slab'
+$montserrat = 'Montserrat'
+
+//;;;;;; COLOR ;;;;;;//
+$blanco = #fff
+$blanco-fondo = #f8f8f8
+$blanco-oscuro = #f2f2f2
+$azul-oscuro = #012b5d
+$azul-pastel = #3d5b7f
+$gris-oscuro = #636363
+$gris-medio = #e8e8e8
+$gris-claro = #8e9397
+$gris-texto = #9b9b9b
+
+
+h1,h2,h3,h4,h5,h6,p 
+ line-height: 1.45
+
+h1 
+	font-size: 2.2em
+	font-family $montserrat
+	font-weight 700
+h2  
+	font-size 1.8em
+	font-family $montserrat
+	font-weight 700
+h3  
+	font-size 1.6em
+	font-family $montserrat
+	font-weight 700
+h4  
+	font-size 1.4em
+	font-family $montserrat
+	font-weight 700
+h5  
+	font-size 1.2em
+	font-family $montserrat
+	font-weight 700
+h6  
+	font-size 1.1em
+	font-family $montserrat
+	font-weight 700
+p
+	font-size 1em
+	font-family $roboto
+	font-weight 300
+ul,ol
+	font-size 12px
+	line-height 120%
+	li
+		line-height 150%
+		a
+			font-family $montserrat
+a
+	text-decoration none
+	cursor pointer
+	&:hover
+		text-decoration none
+
+$roboto = 'Roboto Slab'
+$montserrat = 'Montserrat'
+
+body
+	background $blanco-fondo
+	font-family $roboto
+
+.clear
+	float: none;
+	clear: both;
+
+.container
+	max-width 1024px
+
+/*===========================
+        BTNS
+===========================*/	
+.btn-default
+	border-color $azul-oscuro
+	color $azul-oscuro
+	transition all ease .2s
+	&:hover
+		background $azul-oscuro
+		color $blanco
+		
+/*===========================
+        JUMBOTRON
+===========================*/
+.jumbotron
+	position relative
+	background no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+/*===========================
+        SLIDER
+===========================*/
+.bxslider, .bxslider-interior 
+	width 100%
+	margin 0
+	padding 0
+.slide
+	.bx-wrapper
+		.bxslider-interior, .bxslider-interior-dos, .bxslider-interior-tres 
+			li
+				padding-bottom 10%	
+.bx-wrapper 
+	position: relative;
+	margin: 0 auto
+	padding: 0
+	*zoom: 1
+	li
+		height 0
+		padding-bottom 6.5%
+		overflow hidden
+		img 
+			width: 100%;
+			display: block;
+			position absolute
+		article
+			position absolute
+			color $blanco
+			z-index 1
+			h2
+				display inline-block
+				color $azul-oscuro
+				font-size 4em
+				width 47%
+				line-height 110%
+			p
+				width 47%
+				line-height 135%
+				font-size 1.3em
+				color $gris-oscuro
+	.bx-controls-auto 
+		position: absolute;
+		bottom: -30px;
+		width: 100%
+		text-align: center
+		.bx-controls-auto-item
+			display: inline-block;
+			*zoom: 1;
+			*display: inline;
+		.bx-start 
+			display: block;
+			text-indent: -9999px;
+			width: 10px;
+			height: 11px;
+			outline: 0;
+			background: url(../img/controls.png) -86px -11px no-repeat;
+			margin: 0 3px
+			&:hover
+				background-position: -86px 0;
+		.bx-stop
+			display: block;
+			text-indent: -9999px;
+			width: 9px;
+			height: 11px;
+			outline: 0;
+			background: url(../img/controls.png) -86px -44px no-repeat;
+			margin: 0 3px
+			&:hover
+				background-position: -86px -33px;
+	.bx-controls-direction 
+		a
+			position: absolute;
+			bottom: 5%;
+			margin-top: -16px;
+			outline: 0;
+			width: 32px;
+			height: 32px;
+			text-indent: -9999px;
+			z-index: 9999
+		a.disabled
+			display: none
+	.bx-loading 
+		min-height: 50px;
+		background: url(../img/bx_loader.gif) center center no-repeat $blanco;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2000;
+	.bx-pager
+		text-align: center;
+		font-size: .85em;
+		font-family: Arial;
+		font-weight: bold;
+		color: #666;
+		padding-top: 20px;
+		position: absolute;
+		bottom: -30px;
+		width: 100%; 
+		.bx-default-pager 
+			a 
+				background: $blanco;
+				text-indent: -9999px;
+				display: block;
+				width: 10px;
+				height: 10px;
+				margin: 0 5px;
+				outline: 0;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				display none
+				&:hover
+					background: #D71B20;
+			a.active 
+				background: #D71B20;
+		.bx-pager-item
+			display: inline-block;
+			*zoom: 1;
+			*display: inline
+	.bx-prev
+		left: 0;
+		background: url(../img/controls.png) no-repeat 0 -32px
+		&:hover
+			background-position: 0 0;
+	.bx-next
+		right: 0;
+		background: url(../img/controls.png) no-repeat -43px -32px
+		&:hover
+			background-position: -43px 0
+
+/*===========================
+        CAROUSEL
+===========================*/
+
+.list_carousel
+	background-color $blanco
+	margin 0 0 30px 60px
+	width 360px
+	ul
+		margin 0
+		padding 0
+		list-style none
+		display block
+		li 
+			width 50px
+			height 50px
+			padding 0
+			margin 6px
+			display block
+			float left
+	.prev
+		float left
+		margin-left -30px
+		margin-top 40px
+	.next
+		float right
+		margin-right 10px
+		margin-top 40px
+	.pager
+		float left
+		width 300px
+		text-align center
+		a
+			margin 0 5px
+			text-decoration none
+		a.selected
+			text-decoration underline
+	.timer
+		background-color #999
+		height 6px
+		width 0px
+.list_carousel.responsive 
+	width 98.6%
+	margin-left 0
+	overflow hidden
+
+
+/*===========================
+        PILLS
+===========================*/
+.pills
+	display inline-block
+	vertical-align top
+	figure
+		width 100%
+	div.info
+		font-size 0.7em
+		font-weight 300
+		ul
+			list-style-type none
+			padding 0
+.pills-horizontal
+	display inline-block
+	vertical-align top
+	margin 15px 0
+	figure
+		position responsive
+		figcaption
+			position absolute
+			top 40%
+			left 20px
+			z-index 2
+			font-size 0.7em
+			display none
+		&:hover
+			figcaption
+				display block	
+	div.info
+		font-size 0.7em
+		font-weight 300
+		h3
+			margin 0 0 0 0
+			font-size 1em
+		p
+			font-size 0.85em
+		ul
+			list-style-type none
+			padding 0
+
+
+
+
+/*===========================
+        GENERAL  / HOME
+===========================*/
+header
+	background $azul-oscuro
+	color $blanco
+	margin 0
+	padding 5px 0
+	.navbar
+		margin 0px
+		.def-actions-bar
+			border none
+			font-size 0.7em
+			.navbar-header
+				.navbar-brand
+					padding 10px 10px
+					height 70px
+					img
+						height 100%
+						width auto
+			.navbar-nav
+				li
+					a
+						font-size 1.1em
+						color $blanco
+						font-weight 700
+						padding 25px 5px 5px
+						margin 0 5px
+						transition all ease .2s
+						&:hover, &:active, &:focus
+							background transparent
+							border-bottom 3px solid $blanco
+							
+					&.active
+						a	
+							border-bottom 3px solid $blanco
+
+.slide
+	.paginador
+		text-align center
+		margin-top -48px
+		position relative
+		z-index 2
+		a
+			background $blanco
+			display inline-block
+			max-width 207px
+			padding 6px 30px
+			color $azul-oscuro
+			font-size 13px
+			font-weight 700
+			margin-left -4px
+			position relative
+			font-family $montserrat
+			transition all ease .2s
+			&.active
+				background $azul-oscuro
+				color $blanco
+				text-decoration none
+				&:after
+					bottom 100%
+					left 50%
+					border solid transparent
+					content " "
+					height 0
+					width 0
+					position absolute
+					pointer-events none
+					border-color rgba(1, 43, 93, 0)
+					border-bottom-color #012b5d
+					border-width 10px
+					margin-left -10px
+			&:hover
+				background #d2d2d2
+				
+
+.presentacion
+	text-align center
+	display block
+	padding-bottom 130px
+	h1,h6
+		color $azul-oscuro
+	h6
+		font-family $roboto
+		font-weight 300
+		margin-bottom 30px
+		font-size 1em
+.break-bg
+	background $blanco
+	padding-bottom 20px
+	.index-pills
+		margin-top -120px
+		.pills
+			margin-bottom 15px
+			.info
+				background $blanco
+				padding 15px 15px 0px
+				a
+					color $azul-oscuro	
+					h3
+						font-size 1.2em
+						margin-top 0px
+						display inline-block
+						vertical-align middle
+						max-width 50%
+					span
+						vertical-align middle
+						margin-top 15px
+						opacity .6
+						&:hover
+							opacity 1
+				p
+					font-size 0.8em
+					color $gris-claro
+					margin 0
+					padding 0 0 9px
+					&.primary-color 
+						color $azul-oscuro
+			figure
+				width 100%
+				height 0
+				overflow hidden
+				padding-bottom 40%
+				a
+					display block
+					img
+						width 100%
+	.banner-info
+		margin-top 30px
+		div
+			background $azul-oscuro
+			padding 10px 30px
+			h2
+				color $blanco
+				width 50%
+				font-size 1.7em
+				line-height 120%
+				margin-bottom 10px
+			p
+				font-size 0.7em
+				color $blanco
+				font-weight 100
+				line-height 150%
+				margin-bottom 15px
+			a
+				font-size 0.6em
+				color #fff
+				font-family $montserrat
+				font-weight 700
+				&:hover
+					text-decoration underline
+		figure
+			position relative
+			padding-right 0px
+			height 0
+			overflow hidden
+			padding-bottom 28.7%
+			padding-left 0
+			img
+				width 100%
+.marcas
+	position relative
+	margin 20px 0
+	.control
+		position absolute
+		top 0%
+		height 0
+		width 100%
+		a
+			color $azul-oscuro
+			font-size 15px
+footer
+	padding 20px 0
+	background $blanco-oscuro
+	section
+		&:nth-child(2), &:nth-child(3)
+			padding-left 15px
+			border-left 1px solid #e2e2e2
+		h6
+			font-size 0.7em
+			color $azul-oscuro
+			margin-bottom 15px
+		p
+			font-size 0.5em
+			color $azul-oscuro
+			width 70%
+			margin-top 15px
+		.form-group
+			.form-control
+				border none
+				box-shadow none
+				border-radius 0px
+				font-family $roboto
+		.btn-send
+			background $azul-oscuro
+			color $blanco
+			padding 9px
+			border-radius 0 3px 3px 0
+			border 0px
+			margin 1px 0 0 -4px
+		ul
+			list-style-type none
+			padding 0
+			li
+				a
+					color $azul-oscuro
+					font-family $roboto
+					font-weight 100
+					span
+						margin-right 10px
+						
+/*===========================
+        PRESTADORES SALUD
+===========================*/
+.presentacion-interior
+	height 0
+	padding-bottom 18.5%
+	overflow hidden
+	width 100%
+	position relative
+	article
+		width 70%
+		padding 20px
+		margin 30px auto
+		background rgba(255,255,255,0.6)
+		position relative
+		text-align center
+		h2
+			font-size 2.3em
+			color $azul-oscuro
+		h6
+			font-size 1em
+			color $gris-oscuro
+			font-family $roboto
+			font-weight 300
+	img
+		position absolute
+		top 0
+		left 0
+		width 100%	
+.mini-menu
+	background $gris-medio
+	min-height 40px
+	ul
+		li
+			a
+				color $gris-texto
+				padding-top 10px
+				padding-bottom 10px
+.prestadores-info
+	h6
+		font-family $roboto
+		font-weight 300
+		color $azul-oscuro
+		text-align center
+		line-height 150%
+		margin 30px 0
+	.pills
+		margin-bottom 15px
+		figure
+			width 100%
+			height 0
+			overflow hidden
+			padding-bottom 40%
+			background $blanco
+			position relative
+			img
+				position absolute
+				max-width 95%
+				top 10%
+				left 10%
+				&:empty
+					top 50%
+					left 50%
+					-webkit-transform translate(-50%, -50%)
+					-moz-transform translate(-50%, -50%)
+					-ms-transform translate(-50%, -50%)
+					-o-transform translate(-50%, -50%)
+					transform translate(-50%, -50%)
+			figcaption
+				position absolute
+				top 0
+				left -100%
+				background rgba(61,91,127,.6)
+				z-index 3
+				width 100%
+				height 100%
+				overflow hidden
+				text-align center
+				padding-top 15%
+				transition all ease .2s
+				.btn
+					background $azul-oscuro
+					color $blanco
+			&:hover
+				figcaption
+					left 0px		
+		.info
+			h3
+				margin 0
+				a
+					font-size 0.55em
+					padding 5px
+					color $blanco
+					background $azul-pastel
+					display block
+					border-bottom 3px solid #cdcdcd
+	.intro
+		img
+			display block
+			width 200px
+			height auto
+			margin 20px auto
+		p
+			background $azul-pastel
+			color $blanco
+			line-height 160%
+			padding 30px 15px
+			border-bottom 5px solid #cdcdcd
+			margin-bottom 0
+			&::first-letter
+				font-size 1.7em
+	.single-picture
+		padding-top 30px
+		padding-bottom 30px
+		figure
+			width 100%
+			height 0
+			padding-bottom 70%
+			overflow hidden
+			ma
+			img
+				width 100%
+				height auto
+		.info
+			background $azul-oscuro
+			color $blanco
+			display block
+			margin 0
+			padding 15px
+			h5
+				margin 0
+				font-size 0.8em
+			p
+				font-size 0.7em
+	.detail
+		padding-top 30px
+		padding-bottom 30px
+		h3
+			font-size 1em
+			width 40%
+			margin 0 0 30px
+			padding 0
+			color $azul-oscuro
+		p
+			font-size 0.7em
+			font-weight 300
+			line-height 240%
+			color $gris-claro
+		ul
+			border-left 10px solid $azul-oscuro
+			list-style-type none
+			padding-left 15px
+			margin 30px 0 0 30px
+			li
+				color $azul-oscuro
+				font-size 1.3em
+				font-style italic
+				margin-bottom 10px
+				font-family $roboto
+	.bajada-detail
+		background #adadad
+		padding 30px 0
+		color $blanco
+		font-size 1em
+		font-style italic
+		line-height 160%
+		p
+			width 90%
+			text-align center
+	.bajada-marca
+		color $gris-oscuro
+		padding 15px 0
+		margin 0
+		text-align center
+		font-size 0.85em
+				
+/*===========================
+        Nuestra Empresa
+===========================*/
+.nuestra-empresa
+	.invercionista
+		margin-bottom 20px
+		h4
+			color $azul-oscuro
+		figure
+			img
+				width 100%	
+				height auto
+			figcaption
+				background $azul-oscuro
+				color $blanco
+				font-size 0.7em
+				padding 15px 30px
+				line-height 130%
+				border-bottom 5px solid $gris-medio	
+
+/*===========================
+        Seguros de Salud
+===========================*/				
+.seguros-salud
+	.intro
+		color $gris-oscuro	
+		line-height 160%
+		padding 30px 15px
+		margin-bottom 0
+		&::first-letter
+			font-size 1.7em
+	.empresa
+		.logo
+			width 300px
+			margin 20px auto
+			img
+				width 100%
+				height auto
+		h3
+			color $azul-oscuro
+			font-size 1em
+		.banner-salud
+			width 100%
+			img
+				width 100%
+				height auto
+		p
+			font-size 0.7em
+			color $gris-texto
+			line-height 200%
+			-webkit-column-count 2 /* Chrome, Safari, Opera */
+			-moz-column-count 2 /* Firefox */
+			column-count 2
+			margin 20px 0
+	
+.directorio
+	h4
+		color $azul-oscuro
+	.box-pills
+		background $azul-pastel
+		border-bottom 10px solid $gris-medio
+		margin-bottom 15px
+		color $blanco
+		padding 15px
+		h4
+			margin 0px 0 5px
+			font-size .58em
+			color $blanco
+			width 80%
+		p
+			font-size .58em
+			margin 0px
+			line-height 120%
+			width 80%
+			
+		small
+			font-size .5em
+			margin 10px 0 0
+			line-height 120%
+			font-weight 100
+			width 80%
+			display inline-block
+		span
+			font-size 17px
+			background $blanco
+			display inline-block
+			width 30px
+			height 30px
+			border-radius 50%
+			color $azul-pastel
+			line-height 30px
+			text-align center
+			float right
+			margin 10px 0 0 0
+			
+/*=================================
+    Nuestra Empresa - Memorias
+==================================*/
+
+.nuestra-empresa-memorias
+	.single-picture
+		padding-top 30px
+		padding-bottom 30px
+		figure
+			width 100%
+			height 0
+			padding-bottom 70%
+			overflow hidden
+			ma
+			img
+				width 100%
+				height auto
+		.info
+			background $azul-oscuro
+			color $blanco
+			display block
+			margin 0
+			padding 15px
+			h5
+				margin 0
+				font-size 0.8em
+			p
+				font-size 0.7em
+	.detail
+		padding-top 30px
+		padding-bottom 30px
+		h3
+			font-size 1em
+			width 40%
+			margin 0 0 30px
+			padding 0
+			color $azul-oscuro
+		p
+			font-size 0.7em
+			font-weight 300
+			line-height 240%
+			color $gris-claro
+		ul
+			border-left 10px solid $azul-oscuro
+			list-style-type none
+			padding-left 15px
+			margin 30px 0 0 30px
+			li
+				color $azul-oscuro
+				font-size 1.3em
+				font-style italic
+				margin-bottom 10px
+				font-family $roboto
+	.box-pills
+		background $azul-pastel
+		border-bottom 10px solid $gris-medio
+		margin 15px 0 0
+		color $blanco
+		min-height 120px
+		padding 5px 15px
+		a
+			
+			.info
+				width calc(100%)	
+				h4
+					margin 0px
+					font-size .58em
+					color $blanco
+				small
+					font-size .5em
+					margin 0
+					line-height 120%
+					font-weight 100
+					display inline-block
+					color $blanco
+					&:hover
+						text-decoration underline
+			img
+				width 50px
+				margin-right 10px
+				height 80px
+				display inline-block
+/*=================================
+    Nuestra Empresa - Quienes Somos
+==================================*/
+.nuestra-empresa-quienes-somos
+	&.break-bg
+		padding-bottom 0px
+		.marcas
+			margin-top 40px
+			margin-bottom 0
+	.intro
+		color $gris-oscuro	
+		line-height 160%
+		padding 30px 15px
+		margin-bottom 0
+		&::first-letter
+			font-size 1.7em
+	.single-picture
+		padding-top 30px
+		padding-bottom 30px
+		figure
+			width 100%
+			height 0
+			padding-bottom 70%
+			overflow hidden
+			ma
+			img
+				width 100%
+				height auto
+		.info
+			background $azul-oscuro
+			color $blanco
+			display block
+			margin 0
+			padding 15px
+			h5
+				margin 0 0 0 50%
+				font-size 1.4em
+				line-height 110%
+	.detail
+		padding-top 30px
+		padding-bottom 30px
+		h3
+			font-size 1em
+			width 40%
+			margin 0 0 30px
+			padding 0
+			color $azul-oscuro
+		p
+			font-size 0.7em
+			font-weight 300
+			line-height 240%
+			color $gris-claro
+		ul
+			border-left 10px solid $azul-oscuro
+			list-style-type none
+			padding-left 15px
+			margin 30px 0 0 30px
+			li
+				color $azul-oscuro
+				font-size 1.3em
+				font-style italic
+				margin-bottom 10px
+				font-family $roboto
+				
+/*=================================
+    Nuestra Empresa - Antecedentes
+==================================*/
+.nuestra-empresa-antecedente
+	.single-picture
+		padding-top 30px
+		padding-bottom 30px
+		figure
+			width 100%
+			height 0
+			padding-bottom 70%
+			overflow hidden
+			ma
+			img
+				width 100%
+				height auto
+		.info
+			background $azul-oscuro
+			color $blanco
+			display block
+			margin 0
+			padding 15px
+			h5
+				margin 0
+				font-size 0.8em
+			p
+				font-size 0.7em
+	.detail
+		padding-top 30px
+		padding-bottom 30px
+		h3
+			font-size 1em
+			width 40%
+			margin 0 0 30px
+			padding 0
+			color $azul-oscuro
+		p
+			font-size 0.7em
+			font-weight 300
+			line-height 240%
+			color $gris-claro
+		ul
+			border-left 10px solid $azul-oscuro
+			list-style-type none
+			padding-left 15px
+			margin 30px 0 0 30px
+			li
+				color $azul-oscuro
+				font-size 1.3em
+				font-style italic
+				margin-bottom 10px
+				font-family $roboto
+	.nav-tabs
+		background $gris-medio
+		border 0px
+		border-radius 0px
+		margin-top 30px
+		border-bottom: 1px solid $gris-medio
+		li
+			border 0px
+			width 25%
+			text-align center
+			a
+				border-radius 0px
+				border 0px
+				color $azul-oscuro
+				font-family $roboto
+				font-weight 300
+				font-size 1.2em
+			&.active
+				background $azul-oscuro
+				border 0px
+				a
+					background transparent
+					color $blanco
+					border 0px
+	.tab-pane
+		.timeline
+			li
+				display block
+				width 100%
+				padding-top 20px
+				padding-bottom 20px
+				position relative
+				h5
+					background $azul-oscuro
+					width 40px
+					height 40px
+					border-radius 50%
+					margin 0 auto
+					text-align center
+					color $blanco
+					line-height 40px
+					font-size 0.8em
+					position relative
+				&:after
+					content ''
+					border-left 1px solid $azul-oscuro
+					width 1px
+					height 100%
+					position absolute
+					top 50px
+					left 4%
+				&:last-child
+					&:after
+						display none
+
+/*=================================
+    Nuestra Empresa - Informacion accionistas
+==================================*/
+
+.nuestra-empresa-info-accionista
+	.single-picture
+		padding-top 30px
+		padding-bottom 30px
+		figure
+			width 100%
+			height 0
+			padding-bottom 30%
+			overflow hidden
+			ma
+			img
+				width 100%
+				height auto
+		.info
+			background $azul-oscuro
+			color $blanco
+			display block
+			margin 0
+			padding 15px
+			h5
+				margin 0
+				font-size 0.8em
+			p
+				font-size 0.7em
+	.detail
+		padding-top 30px
+		padding-bottom 30px
+		h3
+			font-size 1em
+			width 40%
+			margin 0 0 30px
+			padding 0
+			color $azul-oscuro
+		p
+			font-size 0.7em
+			font-weight 300
+			line-height 240%
+			color $gris-claro
+		ul
+			border-left 10px solid $azul-oscuro
+			list-style-type none
+			padding-left 15px
+			margin 30px 0 0 30px
+			li
+				color $azul-oscuro
+				font-size 1.3em
+				font-style italic
+				margin-bottom 10px
+				font-family $roboto
+	.resume-pic
+		height 0
+		padding-bottom 30%
+		overflow hidden
+		margin-bottom 15px
+		img
+			width 100%
+	.sociedad
+		h3
+			font-size 1em
+			margin 30px 0
+			padding 0
+			color $azul-oscuro
+		ul
+			font-family $montserrat
+			list-style-type none
+			li
+				text-align right
+				margin-bottom 10px
+				color $gris-texto
+				b
+					font-weight bold
+					color $azul-oscuro
+					width 40%
+					display inline-block
+					text-align left
+					float left
+				&:last-child
+					text-align left
+					b
+						display block
+						width 100%
+	.sistema
+		border-top 1px solid $gris-medio
+		border-bottom 1px solid $gris-medio					
+		padding-top 30px
+		padding-bottom 30px
+		h3
+			font-size 1em
+			margin 0 0 10px
+			padding 0
+			color $azul-oscuro
+		h5
+			font-size 0.7em
+			margin 0 0 30px
+			padding 0
+			color $gris-texto
+		p
+			font-size 0.7em
+			font-weight 300
+			line-height 240%
+			color $gris-claro
+	.reporte
+		padding-top 30px
+		h3
+			font-size 1em
+			margin 0 0 10px
+			padding 0
+			color $azul-oscuro
+		h5
+			font-size 0.7em
+			margin 0 0 30px
+			padding 0
+			color $gris-texto
+		figure
+			width 100%
+			img
+				width 100%
+				height auto
+	.pdf-emule
+		background $gris-oscuro
+		margin-top 30px
+		.nav-tabs
+			border 0px
+			border-radius 0px
+			border-bottom 1px solid $gris-medio
+			li
+				border 0px
+				width 33%
+				text-align center
+				position relative
+				a
+					border-radius 0px
+					border 0px
+					color $azul-oscuro
+					font-family $roboto
+					font-weight 300
+					font-size 1.2em
+				&.active
+					background $azul-oscuro
+					border 0px
+					a
+						background transparent
+						color $blanco
+						border 0px
+					&:after
+						top 100%
+						left 50%
+						border solid transparent
+						content " "
+						height 0
+						width 0
+						position absolute
+						pointer-events none
+						border-top-color $azul-oscuro
+						border-width 15px
+						margin-left -15px
+		.tab-pane
+			.slide, figure
+				width 80%
+				margin 30px auto
+			figure
+				img
+					width 100%
+	.documentos
+		padding-top 30px
+		position relative
+		.control
+			position absolute
+			top -70%
+			height 0
+			width 80%
+			a
+				color $azul-oscuro
+				font-size 15px
+		.list_carousel
+			margin 0
+			background transparent
+			width 360px
+			ul
+				margin 0
+				padding 0
+				list-style none
+				display block
+				background $gris-medio
+				li 
+					width 60px
+					height 40px
+					padding 0
+					margin 0px
+					display block
+					float left
+					background $gris-medio
+					text-align center
+					line-height 40px
+					a
+						color $azul-oscuro
+					&.active
+						background $azul-oscuro
+						a
+							color $blanco
+			.prev
+				float left
+				margin-left -30px
+				margin-top 40px
+			.next
+				float right
+				margin-right 10px
+				margin-top 40px
+			.pager
+				float left
+				width 300px
+				text-align center
+				a
+					margin 0 5px
+					text-decoration none
+				a.selected
+					text-decoration underline
+		.list_carousel.responsive 
+			width 98.6%
+			margin-left 0
+			overflow hidden
+		
+		.tab-pane
+			h3
+				font-size 1em
+				margin 20px 0 0px
+				padding 0
+				color $azul-oscuro
+			h5
+				font-size 0.7em
+				margin 0 0 30px
+				padding 0
+				color $gris-texto
+			.box-pills
+				background $azul-pastel
+				border-bottom 10px solid $gris-medio
+				margin 15px 0 0
+				color $blanco
+				min-height 120px
+				padding 5px 15px
+				a
+					
+					.info
+						width calc(100%)	
+						h4
+							margin 0px
+							font-size .58em
+							color $blanco
+						small
+							font-size .5em
+							margin 0
+							line-height 120%
+							font-weight 100
+							display inline-block
+							color $blanco
+					img
+						width 50px
+						margin-right 10px
+						height 80px
+						display inline-block
+			
+			
+								
+@css{
+	.dropdown-submenu {
+	    position: relative;
+	}
+
+	.dropdown-submenu>.dropdown-menu {
+	    top: 0;
+	    left: 100%;
+	    margin-top: -6px;
+	    margin-left: -1px;
+	    -webkit-border-radius: 0 6px 6px 6px;
+	    -moz-border-radius: 0 6px 6px;
+	    border-radius: 0 6px 6px 6px;
+	}
+
+	.dropdown-submenu:hover>.dropdown-menu {
+	    display: block;
+	}
+
+	.dropdown-submenu>a:after {
+	    display: block;
+	    content: " ";
+	    float: right;
+	    width: 0;
+	    height: 0;
+	    margin-top: 5px;
+	    margin-right: -10px;
+	}
+
+	.dropdown-submenu:hover>a:after {
+	    border-left-color: #fff;
+	}
+
+	.dropdown-submenu.pull-left {
+	    float: none;
+	}
+
+	.dropdown-submenu.pull-left>.dropdown-menu {
+	    left: -100%;
+	    margin-left: 10px;
+	}
+	ul.dropdown-menu li:hover{
+		opacity: 1;
+	}
+	li.dropdown-submenu > ul.dropdown-menu{
+		width: 300px;
+	}
+	li.dropdown-submenu li a{
+		font-size: 12px !important;
+		font-weight: normal !important;
+	}
+	.mini-menu ul li a{
+		font-size: 11.5px !important;
+		margin: 0 !important;
+	}
+	.timeline p{
+		font-size: 1.2em;
+	}
+	h2{
+		color:#012b5d; 
+	}
+	.nuestra-empresa-info-accionista h2{
+		margin: 0 0 0 10px;
+		font-weight: normal;
+	}
+	.nuestra-empresa-info-accionista .single-picture{
+		padding-top: 0;
+	}
+	.reporte h5{
+		margin-bottom: 0 !important;
+		font-size: 1em !important;
+	}
+	.reporte h3{
+		margin-bottom: 0 !important;
+	}
+	.dropdown ul{
+		border: none !important;
+		background: #012b5d;
+	}
+	.presentacion-interior img {
+		width: auto !important;
+		min-height: 240px !important;
+	}
+	.presentacion-interior{
+		background-size: cover;
+		background-position: center;;
+	}
+	.table-responsive{
+		font-size: 0.7em;
+		margin-top: 20px;
+	}
+	.table-responsive thead{
+		background-color: #012b5d;
+		color: #FFF;
+	}
+	.table-responsive tbody{
+		background-color: #FFF;
+	}
+	.iframe-center{
+		width: 571px;
+		margin: 20px auto 0 auto;
+	}
+	.nuestra-empresa-info-accionista iframe{
+		width: 571px;
+		height: 510px;
+		overflow-x: hidden;
+	}
+	.noticias .documentos{
+		margin-top: 0 !important;
+		padding-top: 0 !important;
+	}
+	.imagen-noticia{
+		width:100%; height:180px; overflow:hidden; margin-top:10px; background:red;
+	}
+	.imagen-noticia img{
+		width: 100% !important;
+		height: auto !important; 
+	}
+	.navbar-nav > li > .dropdown-menu{
+		margin-top: 15px;
+	}
+}
+.separation
+	height 40px
+	display block
+	background $gris-medio
+	width 100%
+	position relative
+.dropdown
+	&.open
+		a
+			background $azul-oscuro
+			border-bottom 3px solid $azul-oscuro
+	.dropdown-menu
+		border 0px
+		box-shadow none
+		border-radius 0px
+		li
+			background darken($azul-oscuro , 20%)
+			a
+				border none
+				font-size 12px!important
+				font-weight 300!important
+				padding 10px 15px!important
+				background darken($azul-oscuro , 20%)
+				&:hover
+					border none!important
+					background lightness($azul-oscuro 20%)
+		.dropdown-submenu
+			.dropdown-menu
+				background $azul-oscuro
+			
+
+#breadcrumbs
+	color #999
+	font-size 16px
+	margin-top 20px
+	font-weight bold
+	a
+		color #999
+		font-size 13px
+	
+
+		
+/*===========================
+        MEDIA-QUERIS
+*/
+@media screen and (max-width: 768px)
+	body
+		.directorio 
+			.box-pills 
+				h4
+					font-size 1em
+				p
+					font-size .8em
+				small
+					font-size 0.9em
+		.presentacion-interior
+			article 
+				padding 10px
+				margin 20px auto
+				h6 
+					display none
+				h2
+					font-size 1em
+					margin 0px
+		header 
+			.navbar 
+				.def-actions-bar 
+					.navbar-header 
+						.navbar-brand
+							height 50px	
+		.navbar-toggle 
+			.icon-bar
+				background #fff
+		.bx-wrapper 
+			li 
+				article 
+					h2
+						font-size 2.8em
+						width 83%
+		.presentacion h1
+			font-size 24px
+		.seguros-salud 
+			.empresa p
+				font-size 0.7em
+				color #9b9b9b
+				line-height 140%
+				-webkit-column-count 1
+				-moz-column-count 1
+				column-count 1
+				margin 20px 0
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+	body
+		header 
+			.navbar 
+				.def-actions-bar 
+					.navbar-header 
+						.navbar-brand
+							height 55px
+					.navbar-nav li a
+						font-size 0.9em
+						padding 20px 0px 0px
+		.bx-wrapper 
+			li 
+				article 
+					h2
+						font-size 3em
+						width 100%
+					p
+						font-size 1.1em
+						width 70%
+					.btn-default
+						font-size 12px
+						display none
+		.break-bg 
+			.banner-info 
+				figure
+					padding-left 0px
+				h2
+					font-size 1.1em
+					margin-bottom 5px
+					width 100%	
+				p
+					font-size 0.55em
+					margin-bottom 2px
+				a
+					font-size 0.5em
+		.presentacion-interior
+			article 
+				h6 
+					font-size .7em
+					margin 0px
+				h2
+					font-size 1.6em
+					margin 0px
+		.nuestra-empresa-antecedente 
+			.detail 
+				h3
+					width 60%
+				p
+					line-height 180%
+						
+@media screen and (min-width: 993px) and (max-width: 1200px)
+	body
+		.bx-wrapper
+			li 
+				article 
+					h2
+						font-size 3em
+					p
+						font-size 1.1em
+					.btn-default
+						font-size 12px
+		.break-bg 
+			.banner-info 
+				figure
+					padding-left 0px
+				p
+					font-size 0.6em
+		.presentacion-interior
+			article 
+				h6 
+					font-size 1em
+					margin 0px
+				h2
+					font-size 2em
+					margin 0px

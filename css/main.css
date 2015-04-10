@@ -1,0 +1,1817 @@
+/*===========================
+        CLASES GENERALES
+===========================*/
+@import "icons.css";
+@import "animate.css";
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,300,100,700");
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 1.45;
+}
+h1 {
+  font-size: 2.2em;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.8em;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.6em;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+h4 {
+  font-size: 1.4em;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+h5 {
+  font-size: 1.2em;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+h6 {
+  font-size: 1.1em;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+p {
+  font-size: 1em;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+}
+ul,
+ol {
+  font-size: 12px;
+  line-height: 120%;
+}
+ul li,
+ol li {
+  line-height: 150%;
+}
+ul li a,
+ol li a {
+  font-family: 'Montserrat';
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+body {
+  background: #f8f8f8;
+  font-family: 'Roboto Slab';
+}
+.clear {
+  float: none;
+  clear: both;
+}
+.container {
+  max-width: 1024px;
+}
+/*===========================
+        BTNS
+===========================*/
+.btn-default {
+  border-color: #012b5d;
+  color: #012b5d;
+  transition: all ease 0.2s;
+}
+.btn-default:hover {
+  background: #012b5d;
+  color: #fff;
+}
+/*===========================
+        JUMBOTRON
+===========================*/
+.jumbotron {
+  position: relative;
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/*===========================
+        SLIDER
+===========================*/
+.bxslider,
+.bxslider-interior {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.slide .bx-wrapper .bxslider-interior li,
+.slide .bx-wrapper .bxslider-interior-dos li,
+.slide .bx-wrapper .bxslider-interior-tres li {
+  padding-bottom: 10%;
+}
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  *zoom: 1;
+}
+.bx-wrapper li {
+  height: 0;
+  padding-bottom: 6.5%;
+  overflow: hidden;
+}
+.bx-wrapper li img {
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+.bx-wrapper li article {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+}
+.bx-wrapper li article h2 {
+  display: inline-block;
+  color: #012b5d;
+  font-size: 4em;
+  width: 47%;
+  line-height: 110%;
+}
+.bx-wrapper li article p {
+  width: 47%;
+  line-height: 135%;
+  font-size: 1.3em;
+  color: #636363;
+}
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url("../img/controls.png") -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover {
+  background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url("../img/controls.png") -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover {
+  background-position: -86px -33px;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  bottom: 5%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url("../img/bx_loader.gif") center center no-repeat #fff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: 0.85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+.bx-wrapper .bx-pager .bx-default-pager a {
+  background: #fff;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  display: none;
+}
+.bx-wrapper .bx-pager .bx-default-pager a:hover {
+  background: #d71b20;
+}
+.bx-wrapper .bx-pager .bx-default-pager a.active {
+  background: #d71b20;
+}
+.bx-wrapper .bx-pager .bx-pager-item {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-prev {
+  left: 0;
+  background: url("../img/controls.png") no-repeat 0 -32px;
+}
+.bx-wrapper .bx-prev:hover {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next {
+  right: 0;
+  background: url("../img/controls.png") no-repeat -43px -32px;
+}
+.bx-wrapper .bx-next:hover {
+  background-position: -43px 0;
+}
+/*===========================
+        CAROUSEL
+===========================*/
+.list_carousel {
+  background-color: #fff;
+  margin: 0 0 30px 60px;
+  width: 360px;
+}
+.list_carousel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+.list_carousel ul li {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 6px;
+  display: block;
+  float: left;
+}
+.list_carousel .prev {
+  float: left;
+  margin-left: -30px;
+  margin-top: 40px;
+}
+.list_carousel .next {
+  float: right;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+.list_carousel .pager {
+  float: left;
+  width: 300px;
+  text-align: center;
+}
+.list_carousel .pager a {
+  margin: 0 5px;
+  text-decoration: none;
+}
+.list_carousel .pager a.selected {
+  text-decoration: underline;
+}
+.list_carousel .timer {
+  background-color: #999;
+  height: 6px;
+  width: 0px;
+}
+.list_carousel.responsive {
+  width: 98.6%;
+  margin-left: 0;
+  overflow: hidden;
+}
+/*===========================
+        PILLS
+===========================*/
+.pills {
+  display: inline-block;
+  vertical-align: top;
+}
+.pills figure {
+  width: 100%;
+}
+.pills div.info {
+  font-size: 0.7em;
+  font-weight: 300;
+}
+.pills div.info ul {
+  list-style-type: none;
+  padding: 0;
+}
+.pills-horizontal {
+  display: inline-block;
+  vertical-align: top;
+  margin: 15px 0;
+}
+.pills-horizontal figure {
+  position: responsive;
+}
+.pills-horizontal figure figcaption {
+  position: absolute;
+  top: 40%;
+  left: 20px;
+  z-index: 2;
+  font-size: 0.7em;
+  display: none;
+}
+.pills-horizontal figure:hover figcaption {
+  display: block;
+}
+.pills-horizontal div.info {
+  font-size: 0.7em;
+  font-weight: 300;
+}
+.pills-horizontal div.info h3 {
+  margin: 0 0 0 0;
+  font-size: 1em;
+}
+.pills-horizontal div.info p {
+  font-size: 0.85em;
+}
+.pills-horizontal div.info ul {
+  list-style-type: none;
+  padding: 0;
+}
+/*===========================
+        GENERAL  / HOME
+===========================*/
+header {
+  background: #012b5d;
+  color: #fff;
+  margin: 0;
+  padding: 5px 0;
+}
+header .navbar {
+  margin: 0px;
+}
+header .navbar .def-actions-bar {
+  border: none;
+  font-size: 0.7em;
+}
+header .navbar .def-actions-bar .navbar-header .navbar-brand {
+  padding: 10px 10px;
+  height: 70px;
+}
+header .navbar .def-actions-bar .navbar-header .navbar-brand img {
+  height: 100%;
+  width: auto;
+}
+header .navbar .def-actions-bar .navbar-nav li a {
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 700;
+  padding: 25px 5px 5px;
+  margin: 0 5px;
+  transition: all ease 0.2s;
+}
+header .navbar .def-actions-bar .navbar-nav li a:hover,
+header .navbar .def-actions-bar .navbar-nav li a:active,
+header .navbar .def-actions-bar .navbar-nav li a:focus {
+  background: transparent;
+  border-bottom: 3px solid #fff;
+}
+header .navbar .def-actions-bar .navbar-nav li.active a {
+  border-bottom: 3px solid #fff;
+}
+.slide .paginador {
+  text-align: center;
+  margin-top: -48px;
+  position: relative;
+  z-index: 2;
+}
+.slide .paginador a {
+  background: #fff;
+  display: inline-block;
+  max-width: 207px;
+  padding: 6px 30px;
+  color: #012b5d;
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: -4px;
+  position: relative;
+  font-family: 'Montserrat';
+  transition: all ease 0.2s;
+}
+.slide .paginador a.active {
+  background: #012b5d;
+  color: #fff;
+  text-decoration: none;
+}
+.slide .paginador a.active:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(1,43,93,0);
+  border-bottom-color: #012b5d;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.slide .paginador a:hover {
+  background: #d2d2d2;
+}
+.presentacion {
+  text-align: center;
+  display: block;
+  padding-bottom: 130px;
+}
+.presentacion h1,
+.presentacion h6 {
+  color: #012b5d;
+}
+.presentacion h6 {
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  margin-bottom: 30px;
+  font-size: 1em;
+}
+.break-bg {
+  background: #fff;
+  padding-bottom: 20px;
+}
+.break-bg .index-pills {
+  margin-top: -120px;
+}
+.break-bg .index-pills .pills {
+  margin-bottom: 15px;
+}
+.break-bg .index-pills .pills .info {
+  background: #fff;
+  padding: 15px 15px 0px;
+}
+.break-bg .index-pills .pills .info a {
+  color: #012b5d;
+}
+.break-bg .index-pills .pills .info a h3 {
+  font-size: 1.2em;
+  margin-top: 0px;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 50%;
+}
+.break-bg .index-pills .pills .info a span {
+  vertical-align: middle;
+  margin-top: 15px;
+  opacity: 0.6;
+}
+.break-bg .index-pills .pills .info a span:hover {
+  opacity: 1;
+}
+.break-bg .index-pills .pills .info p {
+  font-size: 0.8em;
+  color: #8e9397;
+  margin: 0;
+  padding: 0 0 9px;
+}
+.break-bg .index-pills .pills .info p.primary-color {
+  color: #012b5d;
+}
+.break-bg .index-pills .pills figure {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 40%;
+}
+.break-bg .index-pills .pills figure a {
+  display: block;
+}
+.break-bg .index-pills .pills figure a img {
+  width: 100%;
+}
+.break-bg .banner-info {
+  margin-top: 30px;
+}
+.break-bg .banner-info div {
+  background: #012b5d;
+  padding: 10px 30px;
+}
+.break-bg .banner-info div h2 {
+  color: #fff;
+  width: 50%;
+  font-size: 1.7em;
+  line-height: 120%;
+  margin-bottom: 10px;
+}
+.break-bg .banner-info div p {
+  font-size: 0.7em;
+  color: #fff;
+  font-weight: 100;
+  line-height: 150%;
+  margin-bottom: 15px;
+}
+.break-bg .banner-info div a {
+  font-size: 0.6em;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+.break-bg .banner-info div a:hover {
+  text-decoration: underline;
+}
+.break-bg .banner-info figure {
+  position: relative;
+  padding-right: 0px;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 28.7%;
+  padding-left: 0;
+}
+.break-bg .banner-info figure img {
+  width: 100%;
+}
+.marcas {
+  position: relative;
+  margin: 20px 0;
+}
+.marcas .control {
+  position: absolute;
+  top: 0%;
+  height: 0;
+  width: 100%;
+}
+.marcas .control a {
+  color: #012b5d;
+  font-size: 15px;
+}
+footer {
+  padding: 20px 0;
+  background: #f2f2f2;
+}
+footer section:nth-child(2),
+footer section:nth-child(3) , footer section:nth-child(4) {
+  padding-left: 15px;
+  border-left: 1px solid #e2e2e2;
+}
+footer section h6 {
+  font-size: 0.7em;
+  color: #012b5d;
+  margin-bottom: 15px;
+}
+footer section p {
+  font-size: 0.5em;
+  color: #012b5d;
+  width: 70%;
+  margin-top: 15px;
+}
+footer section .form-group .form-control {
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-family: 'Roboto Slab';
+}
+footer section .btn-send {
+  background: #012b5d;
+  color: #fff;
+  padding: 9px;
+  border-radius: 0 3px 3px 0;
+  border: 0px;
+  margin: 1px 0 0 -4px;
+}
+footer section ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer section ul li a {
+  color: #012b5d;
+  font-family: 'Roboto Slab';
+  font-weight: 100;
+}
+footer section ul li a span {
+  margin-right: 10px;
+}
+/*===========================
+        PRESTADORES SALUD
+===========================*/
+.presentacion-interior {
+  height: 0;
+  padding-bottom: 18.5%;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+.presentacion-interior article {
+  width: 70%;
+  padding: 20px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.6);
+  position: relative;
+  text-align: center;
+}
+.presentacion-interior article h2 {
+  font-size: 2.3em;
+  color: #012b5d;
+}
+.presentacion-interior article h6 {
+  font-size: 1em;
+  color: #636363;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+}
+.presentacion-interior img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.mini-menu {
+  background: #e8e8e8;
+  min-height: 40px;
+}
+.mini-menu ul li a {
+  color: #9b9b9b;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.prestadores-info h6 {
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  color: #012b5d;
+  text-align: center;
+  line-height: 150%;
+  margin: 30px 0;
+}
+.prestadores-info .pills {
+  margin-bottom: 15px;
+}
+.prestadores-info .pills figure {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 40%;
+  background: #fff;
+  position: relative;
+}
+.prestadores-info .pills figure img {
+  position: absolute;
+  max-width: 95%;
+  top: 10%;
+  left: 10%;
+}
+.prestadores-info .pills figure img:empty {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.prestadores-info .pills figure figcaption {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background: rgba(61,91,127,0.6);
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 15%;
+  transition: all ease 0.2s;
+}
+.prestadores-info .pills figure figcaption .btn {
+  background: #012b5d;
+  color: #fff;
+}
+.prestadores-info .pills figure:hover figcaption {
+  left: 0px;
+}
+.prestadores-info .pills .info h3 {
+  margin: 0;
+}
+.prestadores-info .pills .info h3 a {
+  font-size: 0.55em;
+  padding: 5px;
+  color: #fff;
+  background: #3d5b7f;
+  display: block;
+  border-bottom: 3px solid #cdcdcd;
+}
+.prestadores-info .intro img {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 20px auto;
+}
+.prestadores-info .intro p {
+  background: #3d5b7f;
+  color: #fff;
+  line-height: 160%;
+  padding: 30px 15px;
+  border-bottom: 5px solid #cdcdcd;
+  margin-bottom: 0;
+}
+.prestadores-info .intro p::first-letter {
+  font-size: 1.7em;
+}
+.prestadores-info .single-picture {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.prestadores-info .single-picture figure {
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%;
+  overflow: hidden;
+}
+.prestadores-info .single-picture figure ma,
+.prestadores-info .single-picture figure img {
+  width: 100%;
+  height: auto;
+}
+.prestadores-info .single-picture .info {
+  background: #012b5d;
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 15px;
+}
+.prestadores-info .single-picture .info h5 {
+  margin: 0;
+  font-size: 0.8em;
+}
+.prestadores-info .single-picture .info p {
+  font-size: 0.7em;
+}
+.prestadores-info .detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.prestadores-info .detail h3 {
+  font-size: 1em;
+  width: 40%;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #012b5d;
+}
+.prestadores-info .detail p {
+  font-size: 0.7em;
+  font-weight: 300;
+  line-height: 240%;
+  color: #8e9397;
+}
+.prestadores-info .detail ul {
+  border-left: 10px solid #012b5d;
+  list-style-type: none;
+  padding-left: 15px;
+  margin: 30px 0 0 30px;
+}
+.prestadores-info .detail ul li {
+  color: #012b5d;
+  font-size: 1.3em;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab';
+}
+.prestadores-info .bajada-detail {
+  background: #adadad;
+  padding: 30px 0;
+  color: #fff;
+  font-size: 1em;
+  font-style: italic;
+  line-height: 160%;
+}
+.prestadores-info .bajada-detail p {
+  width: 90%;
+  text-align: center;
+}
+.prestadores-info .bajada-marca {
+  color: #636363;
+  padding: 15px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 0.85em;
+}
+/*===========================
+        Nuestra Empresa
+===========================*/
+.nuestra-empresa .invercionista {
+  margin-bottom: 20px;
+}
+.nuestra-empresa .invercionista h4 {
+  color: #012b5d;
+}
+.nuestra-empresa .invercionista figure img {
+  width: 100%;
+  height: auto;
+}
+.nuestra-empresa .invercionista figure figcaption {
+  background: #012b5d;
+  color: #fff;
+  font-size: 0.7em;
+  padding: 15px 30px;
+  line-height: 130%;
+  border-bottom: 5px solid #e8e8e8;
+}
+/*===========================
+        Seguros de Salud
+===========================*/
+.seguros-salud .intro {
+  color: #636363;
+  line-height: 160%;
+  padding: 30px 15px;
+  margin-bottom: 0;
+}
+.seguros-salud .intro::first-letter {
+  font-size: 1.7em;
+}
+.seguros-salud .empresa .logo {
+  width: 300px;
+  margin: 20px auto;
+}
+.seguros-salud .empresa .logo img {
+  width: 100%;
+  height: auto;
+}
+.seguros-salud .empresa h3 {
+  color: #012b5d;
+  font-size: 1em;
+}
+.seguros-salud .empresa .banner-salud {
+  width: 100%;
+}
+.seguros-salud .empresa .banner-salud img {
+  width: 100%;
+  height: auto;
+}
+.seguros-salud .empresa p {
+  font-size: 0.7em;
+  color: #9b9b9b;
+  line-height: 200%;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  margin: 20px 0;
+}
+.directorio h4 {
+  color: #012b5d;
+}
+.directorio .box-pills {
+  background: #3d5b7f;
+  border-bottom: 10px solid #e8e8e8;
+  margin-bottom: 15px;
+  color: #fff;
+  padding: 15px;
+}
+.directorio .box-pills h4 {
+  margin: 0px 0 5px;
+  font-size: 0.58em;
+  color: #fff;
+  width: 80%;
+}
+.directorio .box-pills p {
+  font-size: 0.58em;
+  margin: 0px;
+  line-height: 120%;
+  width: 80%;
+}
+.directorio .box-pills small {
+  font-size: 0.5em;
+  margin: 10px 0 0;
+  line-height: 120%;
+  font-weight: 100;
+  width: 80%;
+  display: inline-block;
+}
+.directorio .box-pills span {
+  font-size: 17px;
+  background: #fff;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #3d5b7f;
+  line-height: 30px;
+  text-align: center;
+  float: right;
+  margin: 10px 0 0 0;
+}
+/*=================================
+    Nuestra Empresa - Memorias
+==================================*/
+.nuestra-empresa-memorias .single-picture {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-memorias .single-picture figure {
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%;
+  overflow: hidden;
+}
+.nuestra-empresa-memorias .single-picture figure ma,
+.nuestra-empresa-memorias .single-picture figure img {
+  width: 100%;
+  height: auto;
+}
+.nuestra-empresa-memorias .single-picture .info {
+  background: #012b5d;
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 15px;
+}
+.nuestra-empresa-memorias .single-picture .info h5 {
+  margin: 0;
+  font-size: 0.8em;
+}
+.nuestra-empresa-memorias .single-picture .info p {
+  font-size: 0.7em;
+}
+.nuestra-empresa-memorias .detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-memorias .detail h3 {
+  font-size: 1em;
+  width: 40%;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-memorias .detail p {
+  font-size: 0.7em;
+  font-weight: 300;
+  line-height: 240%;
+  color: #8e9397;
+}
+.nuestra-empresa-memorias .detail ul {
+  border-left: 10px solid #012b5d;
+  list-style-type: none;
+  padding-left: 15px;
+  margin: 30px 0 0 30px;
+}
+.nuestra-empresa-memorias .detail ul li {
+  color: #012b5d;
+  font-size: 1.3em;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab';
+}
+.nuestra-empresa-memorias .box-pills {
+  background: #3d5b7f;
+  border-bottom: 10px solid #e8e8e8;
+  margin: 15px 0 0;
+  color: #fff;
+  min-height: 120px;
+  padding: 5px 15px;
+}
+.nuestra-empresa-memorias .box-pills a .info {
+  width: calc(100%);
+}
+.nuestra-empresa-memorias .box-pills a .info h4 {
+  margin: 0px;
+  font-size: 0.58em;
+  color: #fff;
+}
+.nuestra-empresa-memorias .box-pills a .info small {
+  font-size: 0.5em;
+  margin: 0;
+  line-height: 120%;
+  font-weight: 100;
+  display: inline-block;
+  color: #fff;
+}
+.nuestra-empresa-memorias .box-pills a .info small:hover {
+  text-decoration: underline;
+}
+.nuestra-empresa-memorias .box-pills a img {
+  width: 50px;
+  margin-right: 10px;
+  height: 80px;
+  display: inline-block;
+}
+/*=================================
+    Nuestra Empresa - Quienes Somos
+==================================*/
+.nuestra-empresa-quienes-somos.break-bg {
+  padding-bottom: 0px;
+}
+.nuestra-empresa-quienes-somos.break-bg .marcas {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.nuestra-empresa-quienes-somos .intro {
+  color: #636363;
+  line-height: 160%;
+  padding: 30px 15px;
+  margin-bottom: 0;
+}
+.nuestra-empresa-quienes-somos .intro::first-letter {
+  font-size: 1.7em;
+}
+.nuestra-empresa-quienes-somos .single-picture {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-quienes-somos .single-picture figure {
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%;
+  overflow: hidden;
+}
+.nuestra-empresa-quienes-somos .single-picture figure ma,
+.nuestra-empresa-quienes-somos .single-picture figure img {
+  width: 100%;
+  height: auto;
+}
+.nuestra-empresa-quienes-somos .single-picture .info {
+  background: #012b5d;
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 15px;
+}
+.nuestra-empresa-quienes-somos .single-picture .info h5 {
+  margin: 0 0 0 50%;
+  font-size: 1.4em;
+  line-height: 110%;
+}
+.nuestra-empresa-quienes-somos .detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-quienes-somos .detail h3 {
+  font-size: 1em;
+  width: 40%;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-quienes-somos .detail p {
+  font-size: 0.7em;
+  font-weight: 300;
+  line-height: 240%;
+  color: #8e9397;
+}
+.nuestra-empresa-quienes-somos .detail ul {
+  border-left: 10px solid #012b5d;
+  list-style-type: none;
+  padding-left: 15px;
+  margin: 30px 0 0 30px;
+}
+.nuestra-empresa-quienes-somos .detail ul li {
+  color: #012b5d;
+  font-size: 1.3em;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab';
+}
+/*=================================
+    Nuestra Empresa - Antecedentes
+==================================*/
+.nuestra-empresa-antecedente .single-picture {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-antecedente .single-picture figure {
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%;
+  overflow: hidden;
+}
+.nuestra-empresa-antecedente .single-picture figure ma,
+.nuestra-empresa-antecedente .single-picture figure img {
+  width: 100%;
+  height: auto;
+}
+.nuestra-empresa-antecedente .single-picture .info {
+  background: #012b5d;
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 15px;
+}
+.nuestra-empresa-antecedente .single-picture .info h5 {
+  margin: 0;
+  font-size: 0.8em;
+}
+.nuestra-empresa-antecedente .single-picture .info p {
+  font-size: 0.7em;
+}
+.nuestra-empresa-antecedente .detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-antecedente .detail h3 {
+  font-size: 1em;
+  width: 40%;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-antecedente .detail p {
+  font-size: 0.7em;
+  font-weight: 300;
+  line-height: 240%;
+  color: #8e9397;
+}
+.nuestra-empresa-antecedente .detail ul {
+  border-left: 10px solid #012b5d;
+  list-style-type: none;
+  padding-left: 15px;
+  margin: 30px 0 0 30px;
+}
+.nuestra-empresa-antecedente .detail ul li {
+  color: #012b5d;
+  font-size: 1.3em;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab';
+}
+.nuestra-empresa-antecedente .nav-tabs {
+  background: #e8e8e8;
+  border: 0px;
+  border-radius: 0px;
+  margin-top: 30px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.nuestra-empresa-antecedente .nav-tabs li {
+  border: 0px;
+  width: 25%;
+  text-align: center;
+}
+.nuestra-empresa-antecedente .nav-tabs li a {
+  border-radius: 0px;
+  border: 0px;
+  color: #012b5d;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  font-size: 1.2em;
+}
+.nuestra-empresa-antecedente .nav-tabs li.active {
+  background: #012b5d;
+  border: 0px;
+}
+.nuestra-empresa-antecedente .nav-tabs li.active a {
+  background: transparent;
+  color: #fff;
+  border: 0px;
+}
+.nuestra-empresa-antecedente .tab-pane .timeline li {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.nuestra-empresa-antecedente .tab-pane .timeline li h5 {
+  background: #012b5d;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  font-size: 0.8em;
+  position: relative;
+}
+.nuestra-empresa-antecedente .tab-pane .timeline li:after {
+  content: '';
+  border-left: 1px solid #012b5d;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 50px;
+  left: 4%;
+}
+.nuestra-empresa-antecedente .tab-pane .timeline li:last-child:after {
+  display: none;
+}
+/*=================================
+    Nuestra Empresa - Informacion accionistas
+==================================*/
+.nuestra-empresa-info-accionista .single-picture {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-info-accionista .single-picture figure {
+  width: 100%;
+  height: 0;
+  padding-bottom: 30%;
+  overflow: hidden;
+}
+.nuestra-empresa-info-accionista .single-picture figure ma,
+.nuestra-empresa-info-accionista .single-picture figure img {
+  width: 100%;
+  height: auto;
+}
+.nuestra-empresa-info-accionista .single-picture .info {
+  background: #012b5d;
+  color: #fff;
+  display: block;
+  margin: 0;
+  padding: 15px;
+}
+.nuestra-empresa-info-accionista .single-picture .info h5 {
+  margin: 0;
+  font-size: 0.8em;
+}
+.nuestra-empresa-info-accionista .single-picture .info p {
+  font-size: 0.7em;
+}
+.nuestra-empresa-info-accionista .detail {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-info-accionista .detail h3 {
+  font-size: 1em;
+  width: 40%;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-info-accionista .detail p {
+  font-size: 0.7em;
+  font-weight: 300;
+  line-height: 240%;
+  color: #8e9397;
+}
+.nuestra-empresa-info-accionista .detail ul {
+  border-left: 10px solid #012b5d;
+  list-style-type: none;
+  padding-left: 15px;
+  margin: 30px 0 0 30px;
+}
+.nuestra-empresa-info-accionista .detail ul li {
+  color: #012b5d;
+  font-size: 1.3em;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab';
+}
+.nuestra-empresa-info-accionista .resume-pic {
+  height: 0;
+  padding-bottom: 30%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.nuestra-empresa-info-accionista .resume-pic img {
+  width: 100%;
+}
+.nuestra-empresa-info-accionista .sociedad h3 {
+  font-size: 1em;
+  margin: 30px 0;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-info-accionista .sociedad ul {
+  font-family: 'Montserrat';
+  list-style-type: none;
+}
+.nuestra-empresa-info-accionista .sociedad ul li {
+  text-align: right;
+  margin-bottom: 10px;
+  color: #9b9b9b;
+}
+.nuestra-empresa-info-accionista .sociedad ul li b {
+  font-weight: bold;
+  color: #012b5d;
+  width: 40%;
+  display: inline-block;
+  text-align: left;
+  float: left;
+}
+.nuestra-empresa-info-accionista .sociedad ul li:last-child {
+  text-align: left;
+}
+.nuestra-empresa-info-accionista .sociedad ul li:last-child b {
+  display: block;
+  width: 100%;
+}
+.nuestra-empresa-info-accionista .sistema {
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nuestra-empresa-info-accionista .sistema h3 {
+  font-size: 1em;
+  margin: 0 0 10px;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-info-accionista .sistema h5 {
+  font-size: 0.7em;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #9b9b9b;
+}
+.nuestra-empresa-info-accionista .sistema p {
+  font-size: 0.7em;
+  font-weight: 300;
+  line-height: 240%;
+  color: #8e9397;
+}
+.nuestra-empresa-info-accionista .reporte {
+  padding-top: 30px;
+}
+.nuestra-empresa-info-accionista .reporte h3 {
+  font-size: 1em;
+  margin: 0 0 10px;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-info-accionista .reporte h5 {
+  font-size: 0.7em;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #9b9b9b;
+}
+.nuestra-empresa-info-accionista .reporte figure {
+  width: 100%;
+}
+.nuestra-empresa-info-accionista .reporte figure img {
+  width: 100%;
+  height: auto;
+}
+.nuestra-empresa-info-accionista .pdf-emule {
+  background: #636363;
+  margin-top: 30px;
+}
+.nuestra-empresa-info-accionista .pdf-emule .nav-tabs {
+  border: 0px;
+  border-radius: 0px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.nuestra-empresa-info-accionista .pdf-emule .nav-tabs li {
+  border: 0px;
+  width: 33%;
+  text-align: center;
+  position: relative;
+}
+.nuestra-empresa-info-accionista .pdf-emule .nav-tabs li a {
+  border-radius: 0px;
+  border: 0px;
+  color: #012b5d;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  font-size: 1.2em;
+}
+.nuestra-empresa-info-accionista .pdf-emule .nav-tabs li.active {
+  background: #012b5d;
+  border: 0px;
+}
+.nuestra-empresa-info-accionista .pdf-emule .nav-tabs li.active a {
+  background: transparent;
+  color: #fff;
+  border: 0px;
+}
+.nuestra-empresa-info-accionista .pdf-emule .nav-tabs li.active:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-top-color: #012b5d;
+  border-width: 15px;
+  margin-left: -15px;
+}
+.nuestra-empresa-info-accionista .pdf-emule .tab-pane .slide,
+.nuestra-empresa-info-accionista .pdf-emule .tab-pane figure {
+  width: 80%;
+  margin: 30px auto;
+}
+.nuestra-empresa-info-accionista .pdf-emule .tab-pane figure img {
+  width: 100%;
+}
+.nuestra-empresa-info-accionista .documentos {
+  padding-top: 30px;
+  position: relative;
+}
+.nuestra-empresa-info-accionista .documentos .control {
+  position: absolute;
+  top: -70%;
+  height: 0;
+  width: 80%;
+}
+.nuestra-empresa-info-accionista .documentos .control a {
+  color: #012b5d;
+  font-size: 15px;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel {
+  margin: 0;
+  background: transparent;
+  width: 360px;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  background: #e8e8e8;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel ul li {
+  width: 60px;
+  height: 40px;
+  padding: 0;
+  margin: 0px;
+  display: block;
+  float: left;
+  background: #e8e8e8;
+  text-align: center;
+  line-height: 40px;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel ul li a {
+  color: #012b5d;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel ul li.active {
+  background: #012b5d;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel ul li.active a {
+  color: #fff;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel .prev {
+  float: left;
+  margin-left: -30px;
+  margin-top: 40px;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel .next {
+  float: right;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel .pager {
+  float: left;
+  width: 300px;
+  text-align: center;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel .pager a {
+  margin: 0 5px;
+  text-decoration: none;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel .pager a.selected {
+  text-decoration: underline;
+}
+.nuestra-empresa-info-accionista .documentos .list_carousel.responsive {
+  width: 98.6%;
+  margin-left: 0;
+  overflow: hidden;
+}
+.nuestra-empresa-info-accionista .documentos .tab-pane h3 {
+  font-size: 1em;
+  margin: 20px 0 0px;
+  padding: 0;
+  color: #012b5d;
+}
+.nuestra-empresa-info-accionista .documentos .tab-pane h5 {
+  font-size: 0.7em;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #9b9b9b;
+}
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills {
+  background: #3d5b7f;
+  border-bottom: 10px solid #e8e8e8;
+  margin: 15px 0 0;
+  color: #fff;
+  min-height: 120px;
+  padding: 5px 15px;
+}
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills a .info {
+  width: calc(100%);
+}
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills a .info h4 {
+  margin: 0px;
+  font-size: 0.58em;
+  color: #fff;
+}
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills a .info small {
+  font-size: 0.5em;
+  margin: 0;
+  line-height: 120%;
+  font-weight: 100;
+  display: inline-block;
+  color: #fff;
+}
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills a img {
+  width: 50px;
+  margin-right: 10px;
+  height: 80px;
+  display: inline-block;
+}
+
+	.dropdown-submenu {
+	    position: relative;
+	}
+
+	.dropdown-submenu>.dropdown-menu {
+	    top: 0;
+	    left: 100%;
+	    margin-top: -6px;
+	    margin-left: -1px;
+	    -webkit-border-radius: 0 6px 6px 6px;
+	    -moz-border-radius: 0 6px 6px;
+	    border-radius: 0 6px 6px 6px;
+	}
+
+	.dropdown-submenu:hover>.dropdown-menu {
+	    display: block;
+	}
+
+	.dropdown-submenu>a:after {
+	    display: block;
+	    content: " ";
+	    float: right;
+	    width: 0;
+	    height: 0;
+	    margin-top: 5px;
+	    margin-right: -10px;
+	}
+
+	.dropdown-submenu:hover>a:after {
+	    border-left-color: #fff;
+	}
+
+	.dropdown-submenu.pull-left {
+	    float: none;
+	}
+
+	.dropdown-submenu.pull-left>.dropdown-menu {
+	    left: -100%;
+	    margin-left: 10px;
+	}
+	ul.dropdown-menu li:hover{
+		opacity: 1;
+	}
+	li.dropdown-submenu > ul.dropdown-menu{
+		width: 300px;
+	}
+	li.dropdown-submenu li a{
+		font-size: 12px !important;
+		font-weight: normal !important;
+	}
+	.mini-menu ul li a{
+		font-size: 11.5px !important;
+		margin: 0 !important;
+	}
+	.timeline p{
+		font-size: 1.2em;
+	}
+	h2{
+		color:#012b5d; 
+	}
+	.nuestra-empresa-info-accionista h2{
+		margin: 0 0 0 10px;
+		font-weight: normal;
+	}
+	.nuestra-empresa-info-accionista .single-picture{
+		padding-top: 0;
+	}
+	.reporte h5{
+		margin-bottom: 0 !important;
+		font-size: 1em !important;
+	}
+	.reporte h3{
+		margin-bottom: 0 !important;
+	}
+	.dropdown ul{
+		border: none !important;
+		background: #012b5d;
+	}
+	.presentacion-interior img {
+		width: auto !important;
+		min-height: 240px !important;
+	}
+	.presentacion-interior{
+		background-size: cover;
+		background-position: center;;
+	}
+	.table-responsive{
+		font-size: 0.7em;
+		margin-top: 20px;
+	}
+	.table-responsive thead{
+		background-color: #012b5d;
+		color: #FFF;
+	}
+	.table-responsive tbody{
+		background-color: #FFF;
+	}
+	.iframe-center{
+		width: 571px;
+		margin: 20px auto 0 auto;
+	}
+	.nuestra-empresa-info-accionista iframe{
+		width: 571px;
+		height: 510px;
+		overflow-x: hidden;
+	}
+	.noticias .documentos{
+		margin-top: 0 !important;
+		padding-top: 0 !important;
+	}
+	.imagen-noticia{
+		width:100%; height:180px; overflow:hidden; margin-top:10px; background:red;
+	}
+	.imagen-noticia img{
+		width: 100% !important;
+		height: auto !important; 
+	}
+	.navbar-nav > li > .dropdown-menu{
+		margin-top: 15px;
+	}
+.separation {
+  height: 40px;
+  display: block;
+  background: #e8e8e8;
+  width: 100%;
+  position: relative;
+}
+.dropdown.open a {
+  background: #012b5d;
+  border-bottom: 3px solid #012b5d;
+}
+.dropdown .dropdown-menu {
+  border: 0px;
+  box-shadow: none;
+  border-radius: 0px;
+}
+.dropdown .dropdown-menu li {
+  background: #01224a;
+}
+.dropdown .dropdown-menu li a {
+  border: none;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  padding: 10px 15px !important;
+  background: #01224a;
+}
+.dropdown .dropdown-menu li a:hover {
+  border: none !important;
+  background: #012f65;
+}
+.dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
+  background: #012b5d;
+}
+#breadcrumbs {
+  color: #999;
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+#breadcrumbs a {
+  color: #999;
+  font-size: 13px;
+}
+/*===========================
+        MEDIA-QUERIS
+*/
+@media screen and (max-width: 768px) {
+  body .directorio .box-pills h4 {
+    font-size: 1em;
+  }
+  body .directorio .box-pills p {
+    font-size: 0.8em;
+  }
+  body .directorio .box-pills small {
+    font-size: 0.9em;
+  }
+  body .presentacion-interior article {
+    padding: 10px;
+    margin: 20px auto;
+  }
+  body .presentacion-interior article h6 {
+    display: none;
+  }
+  body .presentacion-interior article h2 {
+    font-size: 1em;
+    margin: 0px;
+  }
+  body header .navbar .def-actions-bar .navbar-header .navbar-brand {
+    height: 50px;
+  }
+  body .navbar-toggle .icon-bar {
+    background: #fff;
+  }
+  body .bx-wrapper li article h2 {
+    font-size: 2.8em;
+    width: 83%;
+  }
+  body .presentacion h1 {
+    font-size: 24px;
+  }
+  body .seguros-salud .empresa p {
+    font-size: 0.7em;
+    color: #9b9b9b;
+    line-height: 140%;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    margin: 20px 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  body header .navbar .def-actions-bar .navbar-header .navbar-brand {
+    height: 55px;
+  }
+  body header .navbar .def-actions-bar .navbar-nav li a {
+    font-size: 0.9em;
+    padding: 20px 0px 0px;
+  }
+  body .bx-wrapper li article h2 {
+    font-size: 3em;
+    width: 100%;
+  }
+  body .bx-wrapper li article p {
+    font-size: 1.1em;
+    width: 70%;
+  }
+  body .bx-wrapper li article .btn-default {
+    font-size: 12px;
+    display: none;
+  }
+  body .break-bg .banner-info figure {
+    padding-left: 0px;
+  }
+  body .break-bg .banner-info h2 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  body .break-bg .banner-info p {
+    font-size: 0.55em;
+    margin-bottom: 2px;
+  }
+  body .break-bg .banner-info a {
+    font-size: 0.5em;
+  }
+  body .presentacion-interior article h6 {
+    font-size: 0.7em;
+    margin: 0px;
+  }
+  body .presentacion-interior article h2 {
+    font-size: 1.6em;
+    margin: 0px;
+  }
+  body .nuestra-empresa-antecedente .detail h3 {
+    width: 60%;
+  }
+  body .nuestra-empresa-antecedente .detail p {
+    line-height: 180%;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+  body .bx-wrapper li article h2 {
+    font-size: 3em;
+  }
+  body .bx-wrapper li article p {
+    font-size: 1.1em;
+  }
+  body .bx-wrapper li article .btn-default {
+    font-size: 12px;
+  }
+  body .break-bg .banner-info figure {
+    padding-left: 0px;
+  }
+  body .break-bg .banner-info p {
+    font-size: 0.6em;
+  }
+  body .presentacion-interior article h6 {
+    font-size: 1em;
+    margin: 0px;
+  }
+  body .presentacion-interior article h2 {
+    font-size: 2em;
+    margin: 0px;
+  }
+}
