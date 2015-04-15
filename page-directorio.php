@@ -10,7 +10,7 @@
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
         <article>
             <h2><?php the_title(); ?></h2>
-            <h6><?php echo get('info_bajada') ?></h6>
+            <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
     </figure>
     <?php endwhile; else: ?>
@@ -26,39 +26,37 @@
             <?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
 
             <h4>Directorio</h4>
-            <?php query_posts(array('post_type' =>'directorio','posts_per_page' => 1));
-            if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php $directores = get_posts(array('post_type' =>'directorio' , 'area' => 'directorio' , 'numberposts' => -1 , 'order' => 'ASC'));?>
+            
             <div class="row">
-                <?php $myEvent = get_order_group('directorio_nombre');
-				$dc = 0;
-                foreach($myEvent as $event){
-				$dc++; ?>
+            <?php $dc = 0?>
+                <?php foreach($directores as $director):?>
+                <?php $dc++?>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                    <article class="box-pills" <?php if($dc == 1){echo 'style="background-color:#012b5d"';}?>>
-                        <h4><?php echo get('directorio_nombre',$event); ?></h4>
-                        <p><?php echo get('directorio_cargo',$event); ?></p>
-                        <small><?php echo get('directorio_profesion',$event); ?></small>
-                        <div class="rut"><?php echo get('directorio_rut',$event); ?></div>
+                        <h4><?php echo $director->post_title; ?></h4>
+                        <p><?php echo get_field('cargo',$director->ID); ?></p>
+                        <small><?php echo get_field('profesion',$director->ID); ?></small>
+                        <div class="rut"><?php echo get_field('rut',$director->ID); ?></div>
                     </article> 
                 </div>
-                <?php } ?>
+                <?php endforeach ?>
             </div>
 
             <h4>Comité</h4>
             <div class="row">
-                <?php $myEvent = get_order_group('comite_nombre');
-                foreach($myEvent as $event){ ?>
+                <?php $comite = get_posts(array('post_type' =>'directorio' , 'area' => 'comite', 'numberposts' => -1));?>
+                <?php foreach($comite as $director):?>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                    <article class="box-pills">
-                        <h4><?php echo get('comite_nombre',$event); ?></h4>
-                        <p><?php echo get('comite_cargo',$event); ?></p>
-                        <small><?php echo get('comite_informacion',$event); ?></small>
+                        <h4><?php echo $director->post_title; ?></h4>
+                        <p><?php echo get_field('cargo',$director->ID); ?></p>
+                        <small><?php echo get_field('profesion',$director->ID); ?></small>
                     </article> 
                 </div>
-                <?php } ?>
+				<?php endforeach ?> 
             </div>
-            <?php endwhile; else: ?>
-            <?php endif; ?> 
+            
             
         </div>
 
@@ -66,7 +64,7 @@
     
     <div class="break-bg">
         <div class="container">
-            <?php include(TEMPLATEPATH . '/include-marcas.php'); ?>
+            <?php get_template_part('marcas') ?>
         </div>
     </div>
 <?php get_footer(); ?>

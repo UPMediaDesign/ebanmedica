@@ -737,7 +737,8 @@ body {
   width: 47%;
   line-height: 135%;
   font-size: 1.3em;
-  color: #636363;
+  color: #626262;
+  /*font-weight:900*/
 }
 .bx-wrapper .bx-controls-auto {
   position: absolute;
@@ -2442,3 +2443,6 @@ footer section ul li a span {
 }
 
 .thirdlevel , .thirdlevel a , .thirdlevel li{ background-color:#012b5d !important}
+
+li.col-md-2.active img{border-bottom: 4px solid#525252;}
+.tabfiliales{   background-color: #f2f2f2; padding-bottom: 15px;}

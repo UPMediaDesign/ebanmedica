@@ -11,7 +11,7 @@
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
         <article>
             <h2><?php the_title(); ?></h2>
-            <h6><?php echo get('info_bajada') ?></h6>
+            <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
     </figure>
 
@@ -22,9 +22,7 @@
         <div class="row">
 
             <section class="intro col-sm-12 col-md-12 col-lg-12">
-                
-                <?php echo get('info_extracto') ?>
-                
+                <?php echo $post->post_excerpt ?>
             </section>
 
             <article class="detail col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -34,9 +32,9 @@
             <article class="single-picture col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <figure>
                 	<?php
-                	$otros = array("h" => 350, "w" => 500, "zc" => 1, "q" =>100);
-                	$alt = array('alt'=>'Empresas banmedica', "class" => "img-responsive");
-   					echo get_image('info_imagen',1,1,1,NULL,$otros,$alt);
+                	//$otros = array("h" => 350, "w" => 500, "zc" => 1, "q" =>100);
+                	//$alt = array('alt'=>'Empresas banmedica', "class" => "img-responsive");
+   					//echo get_image('info_imagen',1,1,1,NULL,$otros,$alt);
                 	?>
                 </figure>
                 <div class="info">
