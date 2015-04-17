@@ -29,7 +29,33 @@
    		<header>
 	        <nav class="navbar navbar-fixed-top" role="navigation">
 	            <section class="container def-actions-bar">
-	                <div class="navbar-header">
+                	
+                    <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    </button>
+	                    <a class="navbar-brand" href="<?php echo get_bloginfo('url') ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo-min.png" alt=""></a>
+	                </div>
+                    
+                	<?php
+						wp_nav_menu( array(
+							'menu'              => 'primary',
+							'theme_location'    => 'primary',
+							'depth'             => 4,
+							'container'         => 'div',
+							'container_class'   => 'collapse navbar-collapse',
+							'container_id'      => 'bs-example-navbar-collapse-1',
+							'menu_class'        => 'nav navbar-nav navbar-right',
+							'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+							'walker'            => new wp_bootstrap_navwalker())
+						);
+					?>
+                
+	                <?php /* ?>
+                    <div class="navbar-header">
 	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 	                    <span class="sr-only">Toggle navigation</span>
 	                    <span class="icon-bar"></span>
@@ -98,6 +124,7 @@
 	                        </li>
 	                    </ul>
 	                </div><!-- /.navbar-collapse -->
+                    <?php  */?>
 	            </section><!-- /.container -->
 	        </nav>
 	    </header>

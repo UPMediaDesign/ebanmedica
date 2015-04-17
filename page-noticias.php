@@ -11,7 +11,7 @@
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
         <article>
             <h2><?php the_title(); ?></h2>
-            <h6><?php echo get('info_bajada') ?></h6>
+            <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
     </figure>
     

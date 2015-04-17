@@ -1,11 +1,20 @@
 <?php get_header(); ?>
+	
+    <style>
+    .libg{  background-size: 100%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;}
+    </style>
+    
 	<?php $slides = get_posts(array('post_type' =>'slides'));?>
     <section class="slide hidden-xs">
         <ul class="bxslider">
             
             <?php foreach($slides as $slide):?>
-            <li>
-                <?php echo get_the_post_thumbnail($slide->ID , 'full')?>
+            	<?php $slimage = wp_get_attachment_image_src( get_post_thumbnail_id($slide->ID), 'full' )?>
+                
+            <li style="background-image:url(<?php echo $slimage[0]?>)" class="libg">
+                <?php //echo get_the_post_thumbnail($slide->ID , 'full')?>
                 <div class="container">
                     <article>
                         <h2><?php echo $slide->post_title?></h2>
@@ -84,7 +93,7 @@
             </div><!--index-pills-->
             
             <br class="clear">
-			<?php $campanas = get_posts(array('numberposts' => 1 , 'post_type' => 'campanas' , 'order' => 'RAND'))?>
+			<?php $campanas = get_posts(array('numberposts' => 1 , 'post_type' => 'campanas' , 'orderby' => 'rand'))?>
             <section class="banner-info col-sm-12 col-md-12 col-lg-12">
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <h2><?php echo $campanas[0]->post_title?></h2>

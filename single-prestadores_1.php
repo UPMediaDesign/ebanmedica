@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+	 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
         <article>
             <h2><?php the_title(); ?></h2>
@@ -9,7 +9,7 @@
         </article>
     </figure>
 
-    <?php $prestadores = get_posts(array('post_type' =>'prestadores','showposts' => -1));?> 
+    <?php $prestadores = get_posts(array('post_type' =>'prestadores_1','showposts' => -1));?> 
     <section class="def-actions-bar mini-menu">
         <div class="container">
             <ul class="nav navbar-nav">
@@ -26,6 +26,7 @@
                 <?php /* $logocolor = wp_get_attachment_image_src( get_field('logo_color'), 'full' )?>
                 <img src="<?php echo $logocolor[0]?>" class="img-responsive" alt="">
                 <?php  */the_excerpt(); ?>
+                
             </section>
 
             <div class="row">
@@ -65,7 +66,7 @@
                     <?php echo apply_filters('the_content' ,  get_field('box_2')); ?>
                 </article>
             </div><!--row-->
-        </div>
+        </div><!--container-->
 
         <section class="bajada-detail">
             <div class="container">

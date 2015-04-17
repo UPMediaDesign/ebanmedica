@@ -38,6 +38,7 @@
                         <p><?php echo get_field('cargo',$director->ID); ?></p>
                         <small><?php echo get_field('profesion',$director->ID); ?></small>
                         <div class="rut"><?php echo get_field('rut',$director->ID); ?></div>
+                        <small><a href="<?php echo get_permalink($director->ID)?>">Más información</a></small>
                     </article> 
                 </div>
                 <?php endforeach ?>

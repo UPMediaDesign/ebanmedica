@@ -20,22 +20,13 @@
 
     <section class="container nuestra-empresa-info-accionista">
         <div class="row">
-            <h2>Introducción</h2>
-            <article class="single-picture col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <figure>
-                    <img src="<?php bloginfo('template_url'); ?>/img/nuestra-empresa-info-accionistas.jpg" class="img-responsive">
-                </figure>
-                <div class="info">
-                    <?php echo $post->post_excerpt ?>
-                </div><!--info-->   
-            </article><!--pills-->
-
+            
             <article class="detail col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h3>Resumen</h3>
                 <?php echo $post->post_content ?>
             </article>
 
-            <figure class="col-xs-12 col-sm-6 col-md-6 col-lg-6 resume-pic">
+            <figure class="col-xs-12 col-sm-6 col-md-6 col-lg-6 resume-pic detail">
                 <?php $resumen = wp_get_attachment_image_src( get_field('foto_resumen'), 'full' )?>
                 <img src="<?php echo $resumen[0]?>" class="img-responsive" alt="">
             </figure>  
@@ -209,7 +200,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content documentos-list-content">
                         
-
+						<?php $ef = 0 ; $ec = 0; $er = 0 ; $he = 0?>
                        	<?php $documentos = get_posts(array('post_type' =>'documentos' , 'order' => 'ASC' , 'showposts'=> -1)); ?>
                         <?php foreach($documentos as $documento):?>
                         
@@ -220,6 +211,7 @@
                             <div class="row">
                                 <?php $memorias = get_field('memorias' , $documento->ID);
 								if($memorias){
+									$cm = 0;
 									foreach($memorias as $memoria): ?>
 									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 									   <article class="box-pills ">
@@ -235,19 +227,21 @@
 											</a>
 										</article> 
 									</div>
+                                    <?php $cm++ ; if($cm % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
                             
-                            <h3>Consolidado Empresas Banmédica y Filiales</h3>
+                            <h3>Estados Financieros Empresas Banmédica y Filiales</h3>
                             <h5>Revisiones y actualizaciones del estado de la empresa</h5>
                             <div class="row">
                                 <?php $consolidados = get_field('estados_consolidados' , $documento->ID);
 								if($consolidados){
+									$ef = 0 ;
 									foreach($consolidados as $consolidado): ?>
 									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-									   <article class="box-pills ">
+									   <article class="box-pills eeff">
 											<a href="<?php echo wp_get_attachment_url($consolidado['archivo']) ?>" target="_blank">
 												<img src="<?php bloginfo('template_url'); ?>/img/icon-pdf.svg"  class="pull-left" alt="">
 												<div class="info">
@@ -260,67 +254,30 @@
 											</a>
 										</article> 
 									</div>
+                                    <?php $ef++ ; if($ef % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
 
-                            <h3>Estados Intermedios Empresas Banmédica y Filiales</h3>
+                            <h3>Estados Resumidos Empresas Banmédica y Filiales</h3>
                             <h5>Revisiones y actualizaciones del estado de la empresa</h5>
                             <div class="row">
-                                <?php $intermedios = get_field('estados_intermedios' , $documento->ID);
-								if($intermedios){
-									foreach($intermedios as $intermedio): ?>
-									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-									   <article class="box-pills ">
-											<a href="<?php echo wp_get_attachment_url($intermedio['archivo']) ?>" target="_blank">
-												<img src="<?php bloginfo('template_url'); ?>/img/icon-pdf.svg"  class="pull-left" alt="">
-												<div class="info">
-													<?php $date = DateTime::createFromFormat('Ymd', $intermedio['fecha_publicacion']);?>
-													<small><?php echo $date->format('d-m-Y'); ?></small>
-													<h4><?php echo $intermedio['nombre']; ?></h4>
-													<?php $filesize = filesize( get_attached_file( $intermedio['archivo'] ) );$filesize = size_format($filesize, 2);?>
-                                                    <small><?php echo $filesize;?></small>
-												</div><!--info-->
-											</a>
-										</article> 
-									</div>
-									<?php endforeach ?>
-                                <?php }?>
-								<br class="clear">
-                            </div><!-- row -->
-
-							<h3>Estados Resumidos Empresas Banmédica y Filiales</h3>
-                            <h5>Revisiones y actualizaciones del estado de la empresa</h5>
-                            <div class="row">
-                            	<div role="tabpanel">
                                 <?php $resumidos = get_field('estados_resumidos_filiales' , $documento->ID);
+								$er = 0 ;
 								if($resumidos){?>
                                 <?php $x = count($resumidos); $xc = 0?>
-                                	<ul role="tablist" class="nav nav-tabs">
-									<?php foreach($resumidos as $resumen): ?>
-                                    	<?php $xc++?>
-                                   		<?php $fili = $resumen['filial_asociada']?>
-                                        <?php $fililogo = wp_get_attachment_image_src( get_field('logo_gris' , $fili[0]) , 'full')?>
-                                        <li class="col-md-2 <?php if($xc == 1){echo 'active';}?>"  role="presentation"  <?php //if($x == $xc){echo 'style="display:none"';}?>>
-                                        	<img src="<?php echo $fililogo[0]?>" aria-controls="filial-<?php echo $fili[0]?>" role="tab" data-toggle="tab" href="#filial-<?php echo $fili[0]?>" alt="" class="img-responsive"  >
-                                        </li>
-                                    <?php endforeach;?>
-                                    </ul>
+                                	
                                     
-                                    <div class="clear"></div>
-                                    
-                                    <div class="tab-content">
                                     <?php $rr = 0?>
                                     <?php foreach($resumidos as $resumen):?>
                                     	<?php $rr++?>
                                         <?php $fili = $resumen['filial_asociada']?>
-                                    	<div id="filial-<?php echo $fili[0]?>" role="tabpanel"  <?php //if($x == $rr){echo 'style="display:none"';}?> class="tabfiliales clearfix tab-pane <?php if($rr == 1){echo ' active';}else{echo '';}?>">
 										<?php foreach($resumen['estados'] as $estado): ?>
                                                                           
                                         
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                           <article class="box-pills">
+                                           <article class="box-pills box-pills-b">
                                                 <a href="<?php echo wp_get_attachment_url($estado['archivo']) ?>" target="_blank">
                                                     <img src="<?php bloginfo('template_url'); ?>/img/icon-pdf.svg"  class="pull-left" alt="">
                                                     <div class="info">
@@ -334,15 +291,11 @@
                                                 </a>
                                             </article> 
                                         </div>
-                                        
+                                        <?php $er++ ; if($er % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
                                         <?php endforeach ?>
-                                        
-                                        </div>
 									<?php endforeach ?>
                                     <div class="clear"></div>
-                                    </div>
                                 <?php }?>
-                                </div>
 								<br class="clear">
                             </div><!-- row -->
 
@@ -351,6 +304,7 @@
                             <div class="row">
                                 <?php $hechos = get_field('hechos_esenciales' , $documento->ID);
 								if($hechos){
+									$he = 0;
 									foreach($hechos as $hecho): ?>
 									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 									   <article class="box-pills ">
@@ -366,6 +320,34 @@
 											</a>
 										</article> 
 									</div>
+                                    <?php $he++ ; if($he % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
+									<?php endforeach ?>
+                                <?php }?>
+								<br class="clear">
+                            </div><!-- row -->
+                            
+                            <h3>Presentaciones</h3>
+                            <h5>Press Releases</h5>
+                            <div class="row">
+                                <?php $intermedios = get_field('presentaciones' , $documento->ID);
+								if($intermedios){
+									$ec = 0;
+									foreach($intermedios as $intermedio): ?>
+									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+									   <article class="box-pills ">
+											<a href="<?php echo wp_get_attachment_url($intermedio['archivo']) ?>" target="_blank">
+												<img src="<?php bloginfo('template_url'); ?>/img/icon-pdf.svg"  class="pull-left" alt="">
+												<div class="info">
+													<?php $date = DateTime::createFromFormat('Ymd', $intermedio['fecha_publicacion']);?>
+													<small><?php echo $date->format('d-m-Y'); ?></small>
+													<h4><?php echo $intermedio['nombre']; ?></h4>
+													<?php $filesize = filesize( get_attached_file( $intermedio['archivo'] ) );$filesize = size_format($filesize, 2);?>
+                                                    <small><?php echo $filesize;?></small>
+												</div><!--info-->
+											</a>
+										</article> 
+									</div>
+                                    <?php $ec++ ; if($ec % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
                                 <?php }?>
 								<br class="clear">

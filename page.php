@@ -43,4 +43,5 @@
 	<a href="<?php echo site_url(); ?>">ir a la página de inicio</a></p>
 	<?php endif; ?>
 
+
 <?php get_footer(); ?>

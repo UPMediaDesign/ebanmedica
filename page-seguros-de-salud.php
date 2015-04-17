@@ -5,47 +5,55 @@
 ?>
 <?php get_header(); ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
         <article>
             <h2><?php the_title(); ?></h2>
-            <h6><?php echo get('info_bajada') ?></h6>
+            <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
     </figure>
     <?php endwhile; else: ?>
-    <p><strong>No encontrado</strong><br />
-    <a href="<?php echo site_url(); ?>">ir a la página de inicio</a></p>
     <?php endif; ?>
-
-    <div class="def-actions-bar mini-menu"></div><!--barra gris-->
-
-    <section class="container seguros-salud">
-        
-        <?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
-
-        <section class="intro col-sm-12 col-md-12 col-lg-12">
-            <?php echo get('info_extracto') ?>
-        </section>
-        
-        <?php $myEvent = get_order_group('seguros_titulo');
-        foreach($myEvent as $event){ ?>
-        <article class="empresa col-sm-12 col-md-12 col-lg-12">
-            <figure class="logo">
-                <?php echo get_image('seguros_logo',$event); ?>
-            </figure>
-
-            <h3><?php echo get('seguros_titulo',$event); ?></h3>
-            <figure class="banner-salud">
-                <?php echo get_image('seguros_imagen',$event); ?>
-            </figure>
-            <?php echo get('seguros_texto',$event); ?>
-        </article>
-        <?php } ?> 
-    </section> <!--container-->
-    <div class="break-bg">
+    <?php wp_reset_query(); ?>
+	
+	<?php $prestadores = get_posts(array('post_type' =>'seguros_de_salud','showposts' => -1));?> 
+    <section class="def-actions-bar mini-menu">
         <div class="container">
-            <?php include(TEMPLATEPATH . '/include-marcas.php'); ?>
+            <ul class="nav navbar-nav">
+                <?php foreach($prestadores as $prestador):?>
+                <li><a href="<?php echo get_permalink($prestador->ID); ?>"><?php echo $prestador->post_title ?></a></li>
+                <?php endforeach ?>
+            </ul>
         </div>
-    </div>
+    </section>
+
+    <section class="container">
+        <div class="prestadores-info">
+            <h6><?php echo $post->post_excerpt; ?></h6>
+
+            <?php foreach($prestadores as $prestador):?> 
+
+            <article class="pills col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <figure>
+                    <a href="<?php the_permalink(); ?>">
+                        
+                        <?php $logocolor = wp_get_attachment_image_src( get_field('logo_color' , $prestador->ID), 'full' )?>
+                		<img src="<?php echo $logocolor[0]?>" class="img-responsive" alt="">
+                    </a>
+                    <figcaption>
+                        <a href="<?php echo get_permalink($prestador->ID); ?>" class="btn">Ver Más</a>
+                    </figcaption>
+                </figure>
+                <div class="info">
+                    <h3><a href="<?php echo get_permalink($prestador->ID); ?>"><?php echo $prestador->post_title; ?></a></h3>
+                </div><!--info-->   
+            </article><!--pills-->
+
+            <?php endforeach ?>
+
+        </div><!--prestadores-info-->
+        
+    </section> <!--container-->
+    
 <?php get_footer(); ?>

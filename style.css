@@ -1490,6 +1490,14 @@ footer section ul li a span {
   column-count: 2;
   margin: 20px 0;
 }
+
+.directoress .empresa p {
+  font-size: 0.7em;
+  color: #9b9b9b;
+  line-height: 200%;
+  margin: 20px 0;
+}
+
 .directorio h4 {
   color: #012b5d;
 }
@@ -1519,6 +1527,10 @@ footer section ul li a span {
   font-weight: 100;
   width: 80%;
   display: inline-block;
+}
+
+.directorio .box-pills small a {
+  color:#fff; font-weight:900
 }
 .directorio .box-pills span {
   font-size: 17px;
@@ -1610,6 +1622,7 @@ footer section ul li a span {
   margin: 0px;
   font-size: 0.58em;
   color: #fff;
+  min-height: 55px;
 }
 .nuestra-empresa-memorias .box-pills a .info small {
   font-size: 0.5em;
@@ -1627,6 +1640,7 @@ footer section ul li a span {
   margin-right: 10px;
   height: 80px;
   display: inline-block;
+  margin-bottom: 35px;
 }
 /*=================================
     Nuestra Empresa - Quienes Somos
@@ -2031,15 +2045,19 @@ footer section ul li a span {
   position: relative;
 }
 .nuestra-empresa-info-accionista .documentos .control {
-  position: absolute;
-  top: -70%;
+    position: relative;
   height: 0;
-  width: 80%;
+  width: 100%;
+  top: -70px;
 }
 .nuestra-empresa-info-accionista .documentos .control a {
-  color: #012b5d;
+  color: #fff;
   font-size: 15px;
+  border-radius: 100%;
+  background-color: #3d5b7f;
+  padding: 5px;
 }
+
 .nuestra-empresa-info-accionista .documentos .list_carousel {
   margin: 0;
   background: transparent;
@@ -2074,12 +2092,12 @@ footer section ul li a span {
 }
 .nuestra-empresa-info-accionista .documentos .list_carousel .prev {
   float: left;
-  margin-left: -30px;
+  margin-left: 0px;
   margin-top: 40px;
 }
 .nuestra-empresa-info-accionista .documentos .list_carousel .next {
   float: right;
-  margin-right: 10px;
+  margin-right: 0px;
   margin-top: 40px;
 }
 .nuestra-empresa-info-accionista .documentos .list_carousel .pager {
@@ -2111,6 +2129,7 @@ footer section ul li a span {
   padding: 0;
   color: #9b9b9b;
 }
+
 .nuestra-empresa-info-accionista .documentos .tab-pane .box-pills {
   background: #3d5b7f;
   border-bottom: 10px solid #e8e8e8;
@@ -2119,6 +2138,27 @@ footer section ul li a span {
   min-height: 120px;
   padding: 5px 15px;
 }
+
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills-b {
+  background: #525252 !important;
+  border-bottom: 10px solid #e8e8e8;
+  margin: 15px 0 0;
+  color: #fff !important;
+  min-height: 120px;
+  padding: 5px 15px;
+}
+
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills.eeff  a .info h4 {
+  min-height: 110px;
+}
+
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills.eeff  a img {
+  margin-bottom: 90px;
+}
+
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills-b > a{ color:#525252}
+
+
 .nuestra-empresa-info-accionista .documentos .tab-pane .box-pills a .info {
   width: calc(100%);
 }
@@ -2142,7 +2182,7 @@ footer section ul li a span {
   display: inline-block;
 }
 
-	.dropdown-submenu {
+.dropdown-submenu {
 	    position: relative;
 	}
 
@@ -2196,6 +2236,8 @@ footer section ul li a span {
 		font-size: 11.5px !important;
 		margin: 0 !important;
 	}
+	
+
 	.timeline p{
 		font-size: 1.2em;
 	}
@@ -2298,6 +2340,14 @@ footer section ul li a span {
 .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
   background: #012b5d;
 }
+
+.menu-lvl-1 li { padding-left:5px }
+.menu-lvl-2 li { padding-left:5px }
+.menu-lvl-3 li { padding-left:5px }
+.menu-lvl-1 li a{ background-color:#012b5d !important; padding-left:5px }
+.menu-lvl-2 li a{ background-color:#01224a !important; padding-left:5px }
+.menu-lvl-3 li a{ background-color:#012b5d !important; padding-left:5px }
+
 #breadcrumbs {
   color: #999;
   font-size: 16px;
@@ -2446,3 +2496,6 @@ footer section ul li a span {
 
 li.col-md-2.active img{border-bottom: 4px solid#525252;}
 .tabfiliales{   background-color: #f2f2f2; padding-bottom: 15px;}
+
+.mini-menu{ visibility: hidden !important}
+.eresumidos li{ list-style:none}

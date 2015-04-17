@@ -3,20 +3,16 @@
         <ul class="carrousel">
             
 
-            <?php query_posts(array('post_type' =>'home'));
-            if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php $prestadores = get_posts(array('post_type' => array('prestadores' , 'prestadores_1') , 'numberposts' => -1 , 'orderby' => 'name' , 'orderby' => 'rand'));?>
+            <?php foreach($prestadores as $prestador):?>
 
-            <?php $logos = get_order_group('logos_url');
-            foreach($logos as $logo){ ?>
             <li>
-                <a href="<?php echo get('logos_url',$logo); ?>">
-                    <?php echo get_image('logos_imagen',$logo); ?>
+                <a href="<?php echo get_permalink($prestador->ID); ?>">
+                    <?php //echo get_permalink($prestador->ID) ?><img src="<?php echo wp_get_attachment_url(get_field('logo_gris' , $prestador->ID)) ?>" class="img-responsive" alt="">
                 </a>
             </li>            
-            <?php } ?> 
 
-            <?php endwhile; else: ?>
-            <?php endif; ?> 
+            <?php endforeach;?> 
         </ul>
         <div class="control">
             <a id="prev" class="prev" href="#"><span class="glyphicon glyphicon-arrow-left pull-right" aria-hidden="true"></span></a>
