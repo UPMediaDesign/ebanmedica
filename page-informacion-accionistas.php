@@ -6,6 +6,7 @@
 <?php get_header(); ?>
 
 
+
     <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
         <article>
@@ -18,7 +19,7 @@
         </div>
     </section>
 
-    <section class="container nuestra-empresa-info-accionista">
+    <section class="container nuestra-empresa-info-accionista" id="resumen">
         <div class="row">
             
             <article class="detail col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -55,7 +56,7 @@
                 </div>
             </section>
 
-            <section class="sistema">
+            <section class="sistema" id="sistema-de-votacion">
                 <h3>Sistema de Votacion</h3>
                 <h5>Sistema de votación Junta Ordinaria de Accionistas sociedad Banmédica S.A.</h5>
                 <p><?php echo get_field('sistema'); ?></p>
@@ -168,7 +169,6 @@
         </section>
         <?php endwhile; else: ?>
         <?php endif; */ ?> 
-        
         <section class="documentos">
             <h4 class="container">Documentos y Revisiones</h4>
 
@@ -201,11 +201,13 @@
                     <div class="tab-content documentos-list-content">
                         
 						<?php $ef = 0 ; $ec = 0; $er = 0 ; $he = 0?>
-                       	<?php $documentos = get_posts(array('post_type' =>'documentos' , 'order' => 'ASC' , 'showposts'=> -1)); ?>
-                        <?php foreach($documentos as $documento):?>
                         
+                       	<?php $documentos = get_posts(array('post_type' =>'documentos' , 'order' => 'ASC' , 'showposts'=> -1)); ?>
+                        <?php $docs = 0 ; $doc = count($documentos);?>
+                        <?php foreach($documentos as $documento):?>
+                        <?php $docs++?>
                         <div role="tabpanel" class="tab-pane" id="tab-<?php echo $documento->post_name?>">
-                            <h3>Memorias</h3>
+                            <h3 <?php if($docs == $doc){echo 'id="memorias"';}?>>Memorias</h3>
                             <h5>Memorias y Documentos ordenados por año.</h5>
 
                             <div class="row">
@@ -232,7 +234,7 @@
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
-                            
+                            <?php if($docs == $doc){echo '<div id="estados-financieros" class="anchor"></div>';}?>
                             <h3>Estados Financieros Empresas Banmédica y Filiales</h3>
                             <h5>Revisiones y actualizaciones del estado de la empresa</h5>
                             <div class="row">
@@ -259,46 +261,37 @@
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
-
+                            
+                            <?php if($docs == $doc){echo '<div id="estados-resumidos" class="anchor"></div>';}?>
                             <h3>Estados Resumidos Empresas Banmédica y Filiales</h3>
                             <h5>Revisiones y actualizaciones del estado de la empresa</h5>
                             <div class="row">
-                                <?php $resumidos = get_field('estados_resumidos_filiales' , $documento->ID);
-								$er = 0 ;
-								if($resumidos){?>
-                                <?php $x = count($resumidos); $xc = 0?>
-                                	
-                                    
-                                    <?php $rr = 0?>
-                                    <?php foreach($resumidos as $resumen):?>
-                                    	<?php $rr++?>
-                                        <?php $fili = $resumen['filial_asociada']?>
-										<?php foreach($resumen['estados'] as $estado): ?>
-                                                                          
-                                        
-                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                           <article class="box-pills box-pills-b">
-                                                <a href="<?php echo wp_get_attachment_url($estado['archivo']) ?>" target="_blank">
-                                                    <img src="<?php bloginfo('template_url'); ?>/img/icon-pdf.svg"  class="pull-left" alt="">
-                                                    <div class="info">
-                                                        <?php $date = DateTime::createFromFormat('Ymd', $estado['fecha_publicacion']);?>
-                                                        <small><?php echo $date->format('d-m-Y'); ?></small>
-                                                        
-                                                        <h4><?php echo $estado['nombre_archivo']; ?></h4>
-                                                        <?php $filesize = filesize( get_attached_file( $estado['archivo'] ) );$filesize = size_format($filesize, 2);?>
-                                                        <small><?php echo $filesize;?></small>
-                                                    </div>
-                                                </a>
-                                            </article> 
-                                        </div>
-                                        <?php $er++ ; if($er % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
-                                        <?php endforeach ?>
+                                <?php $consolidados = get_field('estados_resumidos_filiales' , $documento->ID);
+								if($consolidados){
+									$er = 0 ;
+									foreach($consolidados as $consolidado): ?>
+									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+									   <article class="box-pills box-pills-b">
+											<a href="<?php echo wp_get_attachment_url($consolidado['archivo']) ?>" target="_blank">
+												<img src="<?php bloginfo('template_url'); ?>/img/icon-pdf.svg"  class="pull-left" alt="">
+												<div class="info">
+													<?php $date = DateTime::createFromFormat('Ymd', $consolidado['fecha_publicacion']);?>
+													<small><?php echo $date->format('d-m-Y'); ?></small>
+													<h4><?php echo $consolidado['nombre']; ?></h4>
+													<?php $filesize = filesize( get_attached_file( $consolidado['archivo'] ) );$filesize = size_format($filesize, 2);?>
+                                                    <small><?php echo $filesize;?></small>
+												</div><!--info-->
+											</a>
+										</article> 
+									</div>
+                                    <?php $er++ ; if($er % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
-                                    <div class="clear"></div>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
 
+                           
+ 							<?php if($docs == $doc){echo '<div id="hechos-esenciales" class="anchor"></div>';}?>
                             <h3>Hechos Esenciales</h3>
                             <h5>Revisiones y actualizaciones del estado de la empresa</h5>
                             <div class="row">
@@ -326,6 +319,7 @@
 								<br class="clear">
                             </div><!-- row -->
                             
+                            <?php if($docs == $doc){echo '<div id="presentaciones" class="anchor"></div>';}?>
                             <h3>Presentaciones</h3>
                             <h5>Press Releases</h5>
                             <div class="row">
@@ -353,7 +347,7 @@
 								<br class="clear">
                             </div><!-- row -->
 
-                        </div><!--1-->
+                        </div>
                         
                         <?php  endforeach;?>  
                         

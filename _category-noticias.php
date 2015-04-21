@@ -1,21 +1,18 @@
-<?php
-    /*
-    Template Name: Noticias
-    */
-?>
 <?php get_header(); ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+	<?php $var = get_queried_object()?>
+    <?php $url = wp_get_attachment_url( get_field('encabezado', 'category_9') ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
         <article>
-            <h2><?php the_title(); ?></h2>
-            <h6><?php echo get_field('info_bajada') ?></h6>
+            <h2><?php echo $var->name?></h2>
+            <h6><?php //echo get_field('info_bajada') ?></h6>
         </article>
     </figure>
     
     <section class="nuestra-empresa-info-accionista noticias">
+    
+    
+    
         <section class="documentos">
 
             <div role="tabpanel">
@@ -23,49 +20,14 @@
                     <div class="container">
                         <section class="list_carousel responsive">
                             <ul class="carrousel-time" role="tablist">
+                            	
+                            <?php $anos = get_terms('category' , array('child_of' => 9 , 'hide_empty' => false))?>
+                            <?php foreach($anos as $ano):?>
                                 <li>
-                                    <a href="#uno" role="tab" data-toggle="tab">2005</a>
+                                    <a href="<?php echo get_category_link( $ano->term_id )?>"><?php echo $ano->name?></a>
                                 </li>
-
-                                <li>
-                                    <a href="#dos" role="tab" data-toggle="tab">2006</a>
-                                </li>
-
-                                <li>
-                                   <a href="#tres" role="tab" data-toggle="tab">2007</a>
-                                </li>
-
-                                <li>
-                                   <a href="#cuatro" role="tab" data-toggle="tab">2008</a>
-                                </li>
-
-                                <li>
-                                   <a href="#cinco" role="tab" data-toggle="tab">2009</a>
-                                </li>
-
-                                <li>
-                                   <a href="#seis" role="tab" data-toggle="tab">2010</a>
-                                </li>
-
-                                <li>
-                                    <a href="#siete" role="tab" data-toggle="tab">2011</a>
-                                </li>
-
-                                <li>
-                                   <a href="#ocho" role="tab" data-toggle="tab">2012</a>
-                                </li>
-
-                                <li>
-                                   <a href="#nueve" role="tab" data-toggle="tab">2013</a>
-                                </li>
-
-                                <li>
-                                   <a href="#diez" role="tab" data-toggle="tab">2014</a>
-                                </li>
-
-                                <li class="active">
-                                   <a href="#once" role="tab" data-toggle="tab">2015</a>
-                                </li>
+                            <?php endforeach;?>
+                            
                             </ul>
 
                             <div class="control">
@@ -77,6 +39,8 @@
                     </div><!--container-->
                 </span>
                 
+                			
+                                
                 <div class="container">
                     <!-- Tab panes -->
                     <div class="tab-content">
@@ -125,26 +89,24 @@
                         <div role="tabpanel" class="tab-pane fade in active" id="once">
                             <div class="row">
                                 
-
+								<?php foreach($posts as $post):?>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                                   
                                    <article class="box-pills ">
                                         <a href="http://impresa.elmercurio.com/Pages/NewsDetail.aspx?dt=2014-04-08&dtB=08-04-2014%200:00:00&PaginaId=9&bodyid=2" target="_blank">
                                         <div style="" class="imagen-noticia">
                                             <img src="http://www.empresasbanmedica.cl/images/noticias/2014/abril/citacionBM08-04-2014.gif" />
                                         </div>
-                                        
                                             <div class="info">
                                                 <small>8/4/2014</small>
-                                                <h4>Diario el mercurio</h4>
+                                                <h4><?php echo $post->title;?></h4>
                                             </div><!--info-->
                                             <br />
                                         </a>
                                     </article> 
                                 </div>
-
+								<?php endforeach?>
                                 
-
+                                
                             <br class="clear">
                             </div><!-- row -->
                         </div><!--11-->
@@ -155,7 +117,5 @@
         </section><!-- documentos -->
 
     </section>
-    <?php endwhile; else: ?>
-    <?php endif; ?>
     
 <?php get_footer(); ?>

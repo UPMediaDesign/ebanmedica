@@ -20,9 +20,11 @@
                         <h2><?php echo $slide->post_title?></h2>
                         <div class="clear"></div>
                         <span class="hidden-xs hidden-sm"><p><?php echo $slide->post_content?></p>
+                        <?php /* ?>
                         <a href="<?php //echo get('slide_uno_url')?>" class="btn btn-default">
                             Leer Más <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
                         </a>
+                        <?php  */?>
                         </span>
                     </article>
                 </div>
@@ -104,7 +106,7 @@
                 </div>
 
                 <figure class="col-sm-6 col-md-6 col-lg-6">
-                    <a href="<?php //echo get('pastilla_grande_url'); ?>"><?php echo get_the_post_thumbnail($campanas[0]->ID) ?></a>
+                    <a href="<?php //echo get('pastilla_grande_url'); ?>"><?php echo get_the_post_thumbnail($campanas[0]->ID , 'campana') ?></a>
                 </figure>
             </section>
             <?php get_template_part('marcas')?>

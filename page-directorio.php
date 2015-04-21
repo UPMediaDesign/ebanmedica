@@ -38,9 +38,28 @@
                         <p><?php echo get_field('cargo',$director->ID); ?></p>
                         <small><?php echo get_field('profesion',$director->ID); ?></small>
                         <div class="rut"><?php echo get_field('rut',$director->ID); ?></div>
-                        <small><a href="<?php echo get_permalink($director->ID)?>">Más información</a></small>
+                        <small><a data-toggle="modal" data-target="#director-<?php echo $director->ID ?>">Más información</a></small>
                     </article> 
                 </div>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="director-<?php echo $director->ID ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <span class="modal-title">&nbsp;</span>
+                      </div>
+                      <div class="modal-body">
+                      		<h4><?php echo $director->post_title; ?></h4>
+                        	<small><?php echo get_field('cargo',$director->ID); ?></small>
+                        	<?php echo apply_filters('the_content', $director->post_content)?>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                
                 <?php endforeach ?>
             </div>
 

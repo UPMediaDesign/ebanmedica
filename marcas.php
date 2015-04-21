@@ -8,7 +8,7 @@
 
             <li>
                 <a href="<?php echo get_permalink($prestador->ID); ?>">
-                    <?php //echo get_permalink($prestador->ID) ?><img src="<?php echo wp_get_attachment_url(get_field('logo_gris' , $prestador->ID)) ?>" class="img-responsive" alt="">
+                    <?php //echo get_permalink($prestador->ID) ?><img src="<?php echo wp_get_attachment_url(get_field('logo_transparente' , $prestador->ID)) ?>" class="img-responsive" alt="">
                 </a>
             </li>            
 

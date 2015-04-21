@@ -587,11 +587,25 @@ Copyright (c) 2014 Daniel Eden
 .microseparator{ padding-bottom:5px;}
 
 .mobile{ display:none}
+
+.modal.modal-wide .modal-dialog {
+  width: 60%;
+}
 @media screen and (max-width:767px){ 
 	.desktop{ display: none !important}
 	.mobile{ display: inline-block}
+	
+	.modal.modal-wide .modal-dialog{ width:90%}
+	
 }
 
+
+.modal-wide .modal-body {
+  overflow-y: scroll; max-height:550px
+}
+
+.modal-wide .modal-body p{ font-size:16px;}
+.modal-wide .modal-body img{ width:100%; height:auto}
 
 h1,
 h2,
@@ -2119,13 +2133,13 @@ footer section ul li a span {
 }
 .nuestra-empresa-info-accionista .documentos .tab-pane h3 {
   font-size: 1em;
-  margin: 20px 0 0px;
+  margin: 10px 0 0px;
   padding: 0;
   color: #012b5d;
 }
 .nuestra-empresa-info-accionista .documentos .tab-pane h5 {
   font-size: 0.7em;
-  margin: 0 0 30px;
+  margin: 0 0 10px;
   padding: 0;
   color: #9b9b9b;
 }
@@ -2135,7 +2149,7 @@ footer section ul li a span {
   border-bottom: 10px solid #e8e8e8;
   margin: 15px 0 0;
   color: #fff;
-  min-height: 120px;
+  min-height: 140px;
   padding: 5px 15px;
 }
 
@@ -2167,6 +2181,14 @@ footer section ul li a span {
   font-size: 0.58em;
   color: #fff;
 }
+
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills-b a .info h4 {
+  margin: 0px;
+  font-size: 0.58em;
+  color: #fff;
+  min-height:130px;
+}
+
 .nuestra-empresa-info-accionista .documentos .tab-pane .box-pills a .info small {
   font-size: 0.5em;
   margin: 0;
@@ -2175,12 +2197,73 @@ footer section ul li a span {
   display: inline-block;
   color: #fff;
 }
+
+
+
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills {
+  background: #3d5b7f;
+  border-bottom: 10px solid #e8e8e8;
+  margin: 15px 0 0;
+  color: #fff;
+  min-height: 120px;
+  padding: 5px 15px;
+}
+
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills-b {
+  background: #525252 !important;
+  border-bottom: 10px solid #e8e8e8;
+  margin: 15px 0 0;
+  color: #fff !important;
+  min-height: 120px;
+  padding: 5px 15px;
+}
+
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills.eeff  a .info h4 {
+  min-height: 110px;
+}
+
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills.eeff  a img {
+  margin-bottom: 90px;
+}
+
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills-b > a{ color:#525252}
+
+
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills a .info {
+  width: calc(100%);
+}
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills a .info h4 {
+  margin: 0px;
+  font-size: 0.58em;
+  color: #fff;
+  min-height:55px;
+}
+.nuestra-empresa-info-accionista .documentos .noticias .box-pills a .info small {
+  font-size: 0.5em;
+  margin: 0;
+  line-height: 120%;
+  font-weight: 100;
+  display: inline-block;
+  color: #fff;
+}
+
+
 .nuestra-empresa-info-accionista .documentos .tab-pane .box-pills a img {
   width: 50px;
   margin-right: 10px;
   height: 80px;
   display: inline-block;
 }
+
+.nuestra-empresa-info-accionista .documentos .tab-pane .box-pills-b a img {
+  width: 50px;
+  margin-right: 10px;
+  height: 80px;
+  display: inline-block;
+  margin-bottom:110px;
+}
+
+.anchor{ height:80px; display:block}
 
 .dropdown-submenu {
 	    position: relative;
@@ -2298,7 +2381,7 @@ footer section ul li a span {
 		padding-top: 0 !important;
 	}
 	.imagen-noticia{
-		width:100%; height:180px; overflow:hidden; margin-top:10px; background:red;
+		width:100%; height:180px; overflow:hidden; margin-top:10px;
 	}
 	.imagen-noticia img{
 		width: 100% !important;
@@ -2493,9 +2576,39 @@ footer section ul li a span {
 }
 
 .thirdlevel , .thirdlevel a , .thirdlevel li{ background-color:#012b5d !important}
+.menu-lvl-0 li.current-menu-item a , .menu-lvl-0 li:hover a{ border:none !important; background-color:rgba(0,0,0,.2)}
+
 
 li.col-md-2.active img{border-bottom: 4px solid#525252;}
 .tabfiliales{   background-color: #f2f2f2; padding-bottom: 15px;}
 
 .mini-menu{ visibility: hidden !important}
 .eresumidos li{ list-style:none}
+
+.modal-body p{ font-size:16px; line-height:130%; padding-bottom:15px;}
+
+
+.marcas li img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url("data:image/svg+xml; utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  filter: gray;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.marcas li img:hover {
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  filter: grayscale(0);
+  filter: url("data:image/svg+xml; utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+  filter: gray;
+}

@@ -5,6 +5,7 @@ if ( function_exists('add_theme_support') ) {
 	add_image_size('head', 1600, 300, true );
 	add_image_size('box', 600, 425, true );
 	add_image_size('banner', 995, 255, true );
+	add_image_size('campana', 482, 277, true );
 	//add_image_size('slider', 1100, 550, true );
 }	
 	add_post_type_support('page', 'excerpt');

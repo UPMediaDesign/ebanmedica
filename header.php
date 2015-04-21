@@ -6,13 +6,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
         <?php if(is_home()){?>
             <title><?php wp_title();?></title>
         <?php }else{?>
             <title><?php wp_title();?></title>
         <?php }?>
 
-        <meta name="description" content="">
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css">
@@ -22,7 +22,7 @@
 
 		<link rel="shortcut icon" href="<?php bloginfo('template_directory')?>/favicon.ico">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="<?php bloginfo('template_directory')?>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <?php wp_head(); ?>
     </head>
     <body <?php body_class()?>>

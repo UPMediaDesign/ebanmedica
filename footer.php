@@ -95,5 +95,20 @@
     <script>
         $('.table-responsive table').addClass('table table-bordered')
     </script> 
+    
+    <?php if(is_page(68)){?>
+    <script>
+		$('.hashmenu').click(function(event) {
+			var ln = $(this).children('a').attr('rel');
+			var lk = '#'+ln;
+			
+			$('html,body').animate({
+			  scrollTop: $('#'+ln).offset().top
+			}, 1000);
+			
+		});
+	</script>
+    <?php }?>
+    
     </body>
 </html>
