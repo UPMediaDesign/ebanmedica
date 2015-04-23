@@ -84,6 +84,26 @@
         </div> 
     </footer>
 
+	<div class="modal fade" id="buscar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-body">
+            	<form method="get" id="searchform" action="<?php bloginfo('url')?>">
+                      <label class="hidden" for="s"></label>
+                      
+                      <div class="input-group">
+                          <div class="input-group-addon"><a onclick="document.getElementById('searchform').submit();"><span class="glyphicon glyphicon-search"></span></a></div>
+                          <input type="text" placeholder="¿Qué buscas?..." value="" name="s" id="s" class="form-control">
+                      </div>
+                      
+                </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
     <script src="<?php bloginfo('template_url'); ?>/js/vendor/bootstrap.min.js"></script>

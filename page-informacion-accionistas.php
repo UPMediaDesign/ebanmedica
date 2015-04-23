@@ -173,7 +173,7 @@
             <h4 class="container">Documentos y Revisiones</h4>
 
             <div role="tabpanel">
-                <span class="separation">
+                <span class="separation" id="tofix">
                     <div class="container">
                         <section class="list_carousel responsive">
                             <ul class="carrousel-time documentos-list-title" role="tablist">

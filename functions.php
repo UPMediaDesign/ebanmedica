@@ -86,7 +86,7 @@ function seguros_de_salud_register() {
         'capability_type' => 'post',
 		'has_archive' => true,
         'hierarchical' => false,
-        'rewrite' => array( 'slug' => 'seguros_de_salud'),
+        'rewrite' => array( 'slug' => 'seguros-de-salud'),
         'supports' => array('title', 'editor' , 'excerpt' , 'thumbnail' , 'revisions' )
     );
     register_post_type('seguros_de_salud', $args);
@@ -316,7 +316,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$class_names = $value = '';
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-			$classes[] = 'menu-item-' . $item->ID;
+			$classes[] = 'lilvl-'.$depth.' menu-item-' . $item->ID;
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
@@ -428,3 +428,26 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		}
 	}
 }
+?>
+<?php 
+function my_custom_login_logo() {
+    echo '<style type="text/css">
+        h1 a { background-image:url('.get_bloginfo('template_directory').'/img/logo-min.png) !important; width:196px !important; height:50px !important; background-size:196px  !important}
+		.login{ background-color:#3d5b7f}
+    </style>';
+}
+add_action('login_head', 'my_custom_login_logo');?>
+<?php 
+function admins() {
+	echo '<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">';
+	//echo '<link href="'.get_bloginfo('template_directory').'/admin/bootstrap.css" rel="stylesheet">';
+	echo "<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,800,400' rel='stylesheet' type='text/css'>";
+	echo '<style type="text/css">
+		body{ font-family: Open sans, helvetica neue, helvetica, arial , sans-serif}
+		.wp-admin #adminmenu, .wp-admin #adminmenuback, .wp-admin #adminmenuwrap{ background-color:#3d5b7f !important}
+		#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu a.wp-has-current-submenu:focus+.wp-submenu, .no-js li.wp-has-current-submenu:hover .wp-submenu{background-color:#012b5d !important}
+		.wp-core-ui .button-primary{background-color:#3d5b7f !important}
+	</style>';
+}
+add_action('admin_head', 'admins');
+?>

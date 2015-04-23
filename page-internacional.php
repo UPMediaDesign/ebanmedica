@@ -38,7 +38,7 @@
                 <figure>
                     <a href="<?php the_permalink(); ?>">
                         
-                        <?php $logocolor = wp_get_attachment_image_src( get_field('logo_color' , $prestador->ID), 'full' )?>
+                        <?php $logocolor = wp_get_attachment_image_src( get_field('logo_transparente' , $prestador->ID), 'full' )?>
                 		<img src="<?php echo $logocolor[0]?>" class="img-responsive" alt="">
                     </a>
                     <figcaption>

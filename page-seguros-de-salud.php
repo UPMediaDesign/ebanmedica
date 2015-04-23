@@ -31,7 +31,9 @@
     <section class="container">
         <div class="prestadores-info">
             <h6><?php echo $post->post_excerpt; ?></h6>
-
+			
+            <article class="pills col-xs-6 col-sm-4 col-md-3 col-lg-3"></article>
+            
             <?php foreach($prestadores as $prestador):?> 
 
             <article class="pills col-xs-6 col-sm-4 col-md-3 col-lg-3">

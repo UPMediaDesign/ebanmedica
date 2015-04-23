@@ -171,3 +171,34 @@ jQuery(window).scroll(function(){
     }
 });
 
+
+
+jQuery(function(){
+    jQuery('#tofix').data('size','big');
+});
+
+var of = jQuery('#tofix').offset().top;
+var ps = jQuery('#tofix').position().top;
+
+jQuery(window).scroll(function(){
+	
+    if(jQuery(window).scrollTop() > of-80 )
+    {
+        if(jQuery('#tofix').data('size') == 'big')
+        {
+            jQuery('#tofix').data('size','small');
+			
+            jQuery('#tofix').stop().addClass('fixxx');
+        }
+    }
+    else
+    {
+        if(jQuery('#tofix').data('size') == 'small')
+        {
+            jQuery('#tofix').data('size','big');
+			
+            jQuery('#tofix').stop().removeClass('fixxx');
+        }  
+    }
+});
+
