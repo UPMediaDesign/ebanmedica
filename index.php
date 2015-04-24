@@ -7,7 +7,7 @@
     </style>
     
 	<?php $slides = get_posts(array('post_type' =>'slides'));?>
-    <section class="slide hidden-xs">
+    <section class="slide">
         <ul class="bxslider">
             
             <?php foreach($slides as $slide):?>
@@ -33,7 +33,7 @@
 
         </ul>
 
-        <div class="paginador hidden-xs">
+        <div class="paginador ">
         	<?php $sc = 0?>
         	<?php foreach($slides as $slide):?>
             	<?php $sc++?>
@@ -59,7 +59,7 @@
         <div class="container">
             <?php $pills = get_field('cajas' , 143 ) ?>
             
-            <div class="index-pills">
+            <div class="index-pills row">
             <?php $pcounter = 0?>
             
             
@@ -91,24 +91,27 @@
                         </div><!--info--> 
                     </article>
                 <?php }?>
+                <?php if($pcounter == 3){echo '<div class="clear"></div>';}?>
             <?php endforeach;?>
             </div><!--index-pills-->
             
             <br class="clear">
 			<?php $campanas = get_posts(array('numberposts' => 1 , 'post_type' => 'campanas' , 'orderby' => 'rand'))?>
-            <section class="banner-info col-sm-12 col-md-12 col-lg-12">
-                <div class="col-sm-6 col-md-6 col-lg-6">
-                    <h2><?php echo $campanas[0]->post_title?></h2>
-                    <p>
-                        <?php echo $campanas[0]->post_content?>
-                    </p>
-                    <a href="<?php //echo get('pastilla_grande_url'); ?>">Leer Más <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
-                </div>
-
-                <figure class="col-sm-6 col-md-6 col-lg-6">
-                    <a href="<?php //echo get('pastilla_grande_url'); ?>"><?php echo get_the_post_thumbnail($campanas[0]->ID , 'campana') ?></a>
-                </figure>
-            </section>
+            <div class="row">
+                <section class="banner-info col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <h2><?php echo $campanas[0]->post_title?></h2>
+                        <p>
+                            <?php echo $campanas[0]->post_content?>
+                        </p>
+                        <a href="<?php //echo get('pastilla_grande_url'); ?>">Leer Más <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                    </div>
+    
+                    <figure class="col-sm-6 col-md-6 col-lg-6">
+                        <a href="<?php //echo get('pastilla_grande_url'); ?>"><?php echo get_the_post_thumbnail($campanas[0]->ID , 'campana') ?></a>
+                    </figure>
+                </section>
+            </div>
             <?php get_template_part('marcas')?>
 
         </div><!--container-->

@@ -3,7 +3,7 @@
 	<?php $var = get_queried_object()?>
     <?php $url = wp_get_attachment_url( get_field('encabezado', 'category_9') ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
-        <article>
+        <article class="container">
             <h2><?php echo $var->name?></h2>
             <h6><?php //echo get_field('info_bajada') ?></h6>
         </article>
@@ -68,7 +68,7 @@
                                     <div class="modal-content">
                                       <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel"><?php echo $post->post_title?></h4>
+                                        <small class="modal-title" id="myModalLabel"><?php echo $post->post_title?></small>
                                       </div>
                                       <div class="modal-body">
                                         <?php echo apply_filters('the_content' , $post->post_content)?>

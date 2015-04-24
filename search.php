@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <figure class="presentacion-interior" style="background-image:url(/wp-content/uploads/2015/01/empresas-banmedica.jpg)">
-        <article>
+        <article class="container">
             <h2>Resultados de Búsqueda</h2>
             <h6></h6>
         </article>
@@ -34,6 +34,7 @@
                                 </a>
                             </article> 
                         </div>
+                        <?php $rs++?>
                     <?php }elseif($post->post_type == ('post')){ ?>
                     	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                            <article class="box-pills ">
@@ -52,7 +53,7 @@
                                 <div class="modal-content">
                                   <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel"><?php echo substr($post->post_title , 0 , 70)?></h4>
+                                    <small class="modal-title" id="myModalLabel"><?php echo substr($post->post_title , 0 , 70)?></small>
                                   </div>
                                   <div class="modal-body">
                                     <?php echo apply_filters('the_content' , $post->post_content)?>
@@ -65,8 +66,7 @@
                             </div>
                             
                         </div>
-                        
-                       
+                        <?php $rs++?>
                     <?php }elseif($post->post_type == ('seguros_de_salud')){?>
                     	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                            <article class="box-pills ">
@@ -81,6 +81,7 @@
                                 </a>
                             </article> 
                         </div>
+                        <?php $rs++?>
                     <?php }elseif($post->post_type == ('directorio')){?>
                     	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                            <article class="box-pills ">
@@ -95,6 +96,22 @@
                                 </a>
                             </article> 
                         </div>
+                        <?php $rs++?>
+                    <?php }elseif($post->post_type == ('prestadores') || $post->post_type == 'prestadores_1'){?>
+                    	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                           <article class="box-pills ">
+                                <a href="<?php echo get_permalink($post->ID)?>" target="_blank">
+                                    
+                                    <div class="info">
+                                        <small>Prestadores de salud</small>
+                                        <h4><?php echo $post->post_title ?></h4>
+                                        
+                                        <small>Ver información del prestador</small>
+                                    </div>
+                                </a>
+                            </article> 
+                        </div>
+                        <?php $rs++?>
                     <?php }elseif($post->post_type == ('documentos')){?>
                     	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                            <article class="box-pills ">
@@ -109,6 +126,7 @@
                                 </a>
                             </article> 
                         </div>
+                        <?php $rs++?>
                     <?php }elseif($post->post_type == ('attachment') && $post->post_mime_type == 'image/png' || $post->post_type == ('attachment') && $post->post_mime_type == 'image/jpeg'){?>
                     	<?php /* ?>
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -139,9 +157,10 @@
                                 </a>
                             </article> 
                         </div>
+                        <?php $rs++?>
                     <?php }?>
                     
-                    <?php $rs++?>
+                    
                     <?php if($rs % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
                 <?php endforeach; ?>
                 <?php }else{?>

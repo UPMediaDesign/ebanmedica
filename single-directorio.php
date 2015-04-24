@@ -3,7 +3,7 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID , 'head') ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
-        <article>
+        <article class="container">
             <h2><?php the_title(); ?></h2>
             <h6><?php echo get_field('cargo') ?></h6>
             

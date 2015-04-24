@@ -9,7 +9,7 @@
 
     <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
-        <article>
+        <article class="container">
             <h2><?php echo $post->post_title; ?></h2>
             <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
@@ -231,6 +231,12 @@
 									</div>
                                     <?php $cm++ ; if($cm % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
+                                <?php }else{?>
+                                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    	<div class="alert alert-info">
+                                        	<small>No existen documentos para el año solicitado</small>
+                                        </div>
+                                    </div>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
@@ -258,6 +264,12 @@
 									</div>
                                     <?php $ef++ ; if($ef % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
+                                <?php }else{?>
+                                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    	<div class="alert alert-info">
+                                        	<small>No existen documentos para el año solicitado</small>
+                                        </div>
+                                    </div>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
@@ -286,6 +298,12 @@
 									</div>
                                     <?php $er++ ; if($er % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
+                                <?php }else{?>
+                                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    	<div class="alert alert-info">
+                                        	<small>No existen documentos para el año solicitado</small>
+                                        </div>
+                                    </div>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
@@ -315,6 +333,12 @@
 									</div>
                                     <?php $he++ ; if($he % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
+                                <?php }else{?>
+                                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    	<div class="alert alert-info">
+                                        	<small>No existen documentos para el año solicitado</small>
+                                        </div>
+                                    </div>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->
@@ -343,6 +367,12 @@
 									</div>
                                     <?php $ec++ ; if($ec % 3 == 0){ echo '<div class="clear hidden-sm"></div>';}?>
 									<?php endforeach ?>
+                                <?php }else{?>
+                                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    	<div class="alert alert-info">
+                                        	<small>No existen documentos para el año solicitado</small>
+                                        </div>
+                                    </div>
                                 <?php }?>
 								<br class="clear">
                             </div><!-- row -->

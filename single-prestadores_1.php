@@ -3,14 +3,14 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	 <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
-        <article>
+        <article class="container">
             <h2><?php the_title(); ?></h2>
             <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
     </figure>
 
     <?php $prestadores = get_posts(array('post_type' =>'prestadores_1','showposts' => -1));?> 
-    <section class="def-actions-bar mini-menu">
+    <section class="def-actions-bar mini-menu hidden-xs">
         <div class="container">
             <ul class="nav navbar-nav">
                 <?php foreach($prestadores as $prestador):?>
@@ -70,7 +70,11 @@
 
         <section class="bajada-detail">
             <div class="container">
-                <p><?php echo get_field('invitacion'); ?></p>
+            	<?php $lg = wp_get_attachment_image_src( get_field('logo_transparente'), 'box' )?>
+                		
+            	<div class="col-md-2 col-md-offset-5"><a href="<?php get_field('link_prestador')?>" target="_blank"><img src="<?php echo $lg[0]?>" class="img-responsive" alt=""></a></div>
+                <div class="clear"></div>
+                <p><a href="<?php get_field('link_prestador')?>" target="_blank" class="btn btn-default btn-xs">Ir al sitio del prestador</a></p>
             </div>
         </section>
 

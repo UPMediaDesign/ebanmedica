@@ -3,7 +3,7 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<figure class="presentacion-interior">
         <?php the_post_thumbnail( array(1000,1000) ); ?>
-        <article>
+        <article class="container">
             <h2><?php the_title(); ?></h2>
             <h6><?php echo get('info_bajada') ?></h6>
         </article>

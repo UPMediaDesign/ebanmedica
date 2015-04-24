@@ -8,7 +8,7 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
-        <article>
+        <article class="container">
             <h2><?php the_title(); ?></h2>
             <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
@@ -31,8 +31,8 @@
     <section class="container">
         <div class="prestadores-info">
             <h6><?php echo $post->post_excerpt; ?></h6>
-			
-            <article class="pills col-xs-6 col-sm-4 col-md-3 col-lg-3"></article>
+			<div class="row">
+            <article class="pills col-xs-6 col-sm-4 col-md-3 col-lg-3 hidden-xs hidden-sm"></article>
             
             <?php foreach($prestadores as $prestador):?> 
 
@@ -53,7 +53,7 @@
             </article><!--pills-->
 
             <?php endforeach ?>
-
+		</div>
         </div><!--prestadores-info-->
         
     </section> <!--container-->

@@ -8,7 +8,7 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
-        <article>
+        <article class="container">
             <h2><?php the_title(); ?></h2>
             <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
@@ -43,17 +43,22 @@
                 </div>
                 
                 <!-- Modal -->
-                <div class="modal fade" id="director-<?php echo $director->ID ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal fade directoresmodal" id="director-<?php echo $director->ID ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <span class="modal-title">&nbsp;</span>
-                      </div>
+                      
                       <div class="modal-body">
+                      	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      	<div class="col-md-4">
+                            <img src="<?php bloginfo('template_directory')?>/img/empresasbanmedica.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-md-12">
                       		<h4><?php echo $director->post_title; ?></h4>
                         	<small><?php echo get_field('cargo',$director->ID); ?></small>
                         	<?php echo apply_filters('the_content', $director->post_content)?>
+                        </div>
+                        <div class="clear"></div>
                       </div>
                       
                     </div>

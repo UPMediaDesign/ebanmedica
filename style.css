@@ -714,6 +714,9 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.slide{ margin-top:70px}
+
 .slide .bx-wrapper .bxslider-interior li,
 .slide .bx-wrapper .bxslider-interior-dos li,
 .slide .bx-wrapper .bxslider-interior-tres li {
@@ -1038,6 +1041,28 @@ header .navbar .def-actions-bar .navbar-nav li.lilvl-1 a {
   font-family: 'Montserrat';
   transition: all ease 0.2s;
 }
+@media screen and (max-width: 992px){
+.slide{ margin-top:50px;}
+}
+@media screen and (max-width: 768px){
+
+.slide .paginador{ margin-top:0px;}
+	
+.slide .paginador a {
+  background: #fff;
+  background-color: rgba(255,255,255,1);
+  display: inline-block;
+  max-width: 33%;
+  padding: 6px 15px;
+  color: #012b5d;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: -4px;
+  position: relative;
+  font-family: 'Montserrat';
+  transition: all ease 0.2s;
+}
+}
 .slide .paginador a.active {
   background: #012b5d;
   color: #fff;
@@ -1205,8 +1230,8 @@ footer {
 footer section:nth-child(2),
 footer section:nth-child(3) , footer section:nth-child(4) {
   padding-left: 15px;
-  border-left: 1px solid #e2e2e2;
-  min-height:165px;
+  /*border-left: 1px solid #e2e2e2;*/
+  /*min-height:165px;*/
 }
 footer section h6 {
   font-size: 0.7em;
@@ -1254,11 +1279,12 @@ footer section ul li a span {
   overflow: hidden;
   width: 100%;
   position: relative;
+  margin-top:60px;
 }
 .presentacion-interior article {
-  width: 70%;
+  /*width: 70%;*/
   padding: 20px;
-  margin: 70px auto 0;
+  margin: 30px auto 0;
   background: rgba(255,255,255,0.6);
   position: relative;
   text-align: center;
@@ -1438,7 +1464,7 @@ footer section ul li a span {
   line-height: 160%;
 }
 .prestadores-info .bajada-detail p {
-  width: 90%;
+  /*width: 90%;*/
   text-align: center;
 }
 .prestadores-info .bajada-marca {
@@ -2393,7 +2419,7 @@ footer section ul li a span {
 		height: auto !important; 
 	}
 	.navbar-nav > li > .dropdown-menu{
-		margin-top: 15px;
+		/*margin-top: 15px;*/
 	}
 .separation {
   height: 40px;
@@ -2477,8 +2503,8 @@ footer section ul li a span {
     background: #fff;
   }
   body .bx-wrapper li article h2 {
-    font-size: 2.8em;
-    width: 83%;
+    font-size: 25px;
+    width: 65%;
   }
   body .presentacion h1 {
     font-size: 24px;
@@ -2492,6 +2518,19 @@ footer section ul li a span {
     column-count: 1;
     margin: 20px 0;
   }
+  
+  .break-bg .banner-info figure {
+	  height: 100%;
+	  padding-bottom: 15px;
+	}
+
+	.break-bg .banner-info figure img {
+	  width: 100%;
+	  height: auto;
+	}
+	
+	.presentacion-interior{ margin-top:50px;}
+  
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   body header .navbar .def-actions-bar .navbar-header .navbar-brand {
@@ -2583,6 +2622,8 @@ footer section ul li a span {
 .thirdlevel , .thirdlevel a , .thirdlevel li{ background-color:#012b5d !important}
 .menu-lvl-0 li.current-menu-item a , .menu-lvl-0 li:hover a{ border:none !important; background-color:rgba(0,0,0,.2)}
 
+.dropdown:hover .dropdown-menu.menu-lvl-0 {display: inline-block;}
+.menu-item-has-children .dropdown-toggle:hover{ border:none !important}
 
 li.col-md-2.active img{border-bottom: 4px solid#525252;}
 .tabfiliales{   background-color: #f2f2f2; padding-bottom: 15px;}
@@ -2606,6 +2647,7 @@ li.col-md-2.active img{border-bottom: 4px solid#525252;}
   -o-transition: all .3s ease-in-out;
   -ms-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  opacity:0.6
 }
 
 .marcas li img:hover {
@@ -2616,12 +2658,13 @@ li.col-md-2.active img{border-bottom: 4px solid#525252;}
   filter: grayscale(0);
   filter: url("data:image/svg+xml; utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
   filter: gray;
+  opacity:1
 }
 
 
 
 #buscar {
-  top: 50%;
+  top: 40%;
 }
 
 .modal-backdrop.in {
@@ -2630,5 +2673,5 @@ li.col-md-2.active img{border-bottom: 4px solid#525252;}
 }
 
 .modal-backdrop{ background-color:#01224a}
-
+.directoresmodal p{ font-size:14px;}
 .fixxx{ position:fixed; top:80px; z-index:9}

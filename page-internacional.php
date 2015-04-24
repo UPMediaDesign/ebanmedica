@@ -8,7 +8,7 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
     <figure class="presentacion-interior" style="background-image:url(<?php echo $url; ?>)">
-        <article>
+        <article class="container">
             <h2><?php the_title(); ?></h2>
             <h6><?php echo get_field('info_bajada') ?></h6>
         </article>
@@ -18,7 +18,7 @@
     <?php wp_reset_query(); ?>
 	
 	<?php $prestadores = get_posts(array('post_type' =>'prestadores_1','showposts' => -1));?> 
-    <section class="def-actions-bar mini-menu">
+    <section class="def-actions-bar mini-menu hidden-xs">
         <div class="container">
             <ul class="nav navbar-nav">
                 <?php foreach($prestadores as $prestador):?>
@@ -31,8 +31,10 @@
     <section class="container">
         <div class="prestadores-info">
             <h6><?php echo $post->post_excerpt; ?></h6>
-
-            <?php foreach($prestadores as $prestador):?> 
+			<?php $pcount = 0?>
+            <div class="row">
+            <?php foreach($prestadores as $prestador):?>
+            <?php $pcount++?> 
 
             <article class="pills col-xs-6 col-sm-4 col-md-3 col-lg-3">
                 <figure>
@@ -46,14 +48,16 @@
                     </figcaption>
                 </figure>
                 <div class="info">
-                    <h3><a href="<?php echo get_permalink($prestador->ID); ?>"><?php echo $prestador->post_title; ?></a></h3>
+                    <h3><a href="<?php echo get_permalink($prestador->ID); ?>"><?php echo str_replace(' -' , '' , $prestador->post_title ); ?></a></h3>
                 </div><!--info-->   
             </article><!--pills-->
-
+				<?php if($pcount % 2 == 0){echo '<div class="clear hidden-md hidden-sm hidden-lg"></div>';}?>
+                <?php if($pcount % 3 == 0){echo '<div class="clear hidden-md hidden-xs hidden-lg"></div>';}?>
+                <?php if($pcount % 4 == 0){echo '<div class="clear hidden-xs hidden-sm"></div>';}?> 
             <?php endforeach ?>
 
         </div><!--prestadores-info-->
-        
+        </div>
     </section> <!--container-->
     
 <?php get_footer(); ?>
