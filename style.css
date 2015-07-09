@@ -1456,11 +1456,10 @@ footer section ul li a span {
   font-family: 'Roboto Slab';
 }
 .prestadores-info .bajada-detail {
-  background: #adadad;
+  background: #f2f2f2;
   padding: 30px 0;
   color: #fff;
   font-size: 1em;
-  font-style: italic;
   line-height: 160%;
 }
 .prestadores-info .bajada-detail p {
@@ -1986,6 +1985,14 @@ footer section ul li a span {
   display: block;
   width: 100%;
 }
+
+.infosociedad { font-size:13px; font-family:Montserrat, helvetica, arial, sans-serif; color:#9b9b9b; margin-bottom:0px;}
+
+.infosociedad span{
+	font-weight: bold;
+	color: #012b5d;
+}
+
 .nuestra-empresa-info-accionista .sistema {
   border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
@@ -2095,6 +2102,7 @@ footer section ul li a span {
   width: 100%;
   top: -70px;
 }
+
 .nuestra-empresa-info-accionista .documentos .control a {
   color: #fff;
   font-size: 15px;
@@ -2374,7 +2382,7 @@ footer section ul li a span {
 	}
 	.dropdown ul{
 		border: none !important;
-		background: #012b5d;
+		background:#01224a;
 	}
 	.presentacion-interior img {
 		width: auto !important;
@@ -2437,9 +2445,9 @@ footer section ul li a span {
   box-shadow: none;
   border-radius: 0px;
 }
-.dropdown .dropdown-menu li {
+/*.dropdown .dropdown-menu li {
   background: #01224a;
-}
+}*/
 .dropdown .dropdown-menu li a {
   border: none;
   font-size: 12px !important;
@@ -2449,7 +2457,7 @@ footer section ul li a span {
 }
 .dropdown .dropdown-menu li a:hover {
   border: none !important;
-  background: #012f65;
+  background: #012f65 !important;
 }
 .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
   background: #012b5d;
@@ -2461,6 +2469,8 @@ footer section ul li a span {
 .menu-lvl-1 li a{ background-color:#012b5d !important; padding-left:5px }
 .menu-lvl-2 li a{ background-color:#01224a !important; padding-left:5px }
 .menu-lvl-3 li a{ background-color:#012b5d !important; padding-left:5px }
+
+.dropdown-menu li a{ margin:0px !important}
 
 #breadcrumbs {
   color: #999;
@@ -2530,7 +2540,21 @@ footer section ul li a span {
 	}
 	
 	.presentacion-interior{ margin-top:50px;}
-  
+	
+	.nuestra-empresa-info-accionista .documentos .control{position: absolute !important;	
+top:-30px !important;
+z-index: 9 !important;
+left: 0px !important;
+right: 0px !important;}
+
+.infosociedad{ font-size:12px;}
+.fixxx{ top:60px !important}
+.timeline{ margin:0px; padding:0px;}
+
+.nuestra-empresa-antecedente .tab-pane .timeline li:after {
+  left: 35px;
+}
+
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   body header .navbar .def-actions-bar .navbar-header .navbar-brand {
@@ -2675,3 +2699,4 @@ li.col-md-2.active img{border-bottom: 4px solid#525252;}
 .modal-backdrop{ background-color:#01224a}
 .directoresmodal p{ font-size:14px;}
 .fixxx{ position:fixed; top:80px; z-index:9}
+

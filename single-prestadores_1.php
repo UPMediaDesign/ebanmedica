@@ -74,7 +74,7 @@
                 		
             	<div class="col-md-2 col-md-offset-5"><a href="<?php get_field('link_prestador')?>" target="_blank"><img src="<?php echo $lg[0]?>" class="img-responsive" alt=""></a></div>
                 <div class="clear"></div>
-                <p><a href="<?php get_field('link_prestador')?>" target="_blank" class="btn btn-default btn-xs">Ir al sitio del prestador</a></p>
+                <p><a href="<?php get_field('link_prestador')?>" target="_blank" class="btn btn-primary btn-sm">Ir al sitio del prestador</a></p>
             </div>
         </section>
 

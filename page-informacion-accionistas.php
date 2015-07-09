@@ -41,18 +41,30 @@
             <section class="sociedad">
                 <h3>Identificación de la Sociedad</h3>
                 <div class="row">
-                    <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <li><b>Razón Social :</b><?php echo get_field('razon_social'); ?></li>
-                        <li><b>Nombre de Fantasía :</b><?php echo get_field('nombre_de_fantasia'); ?></li>
-                        <li><b>Domicilio Legal :</b><?php echo get_field('domicilio_legal'); ?></li>
-                        <li><b>Inscripción:</b><?php echo get_field('inscripcion'); ?></li>
-                    </ul>
-                    <ul class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <li><b>R.U.T.</b> <?php echo get_field('rut'); ?></li>
-                        <li><b>Tipo de Entidad :</b><?php echo get_field('tipo_entidad'); ?></li>
-                        <li><b>Información de contacto para Accionistas :</b><?php echo get_field('info_de_contacto'); ?></li>
-                        <li><b>Documentos Constitutivos</b> <?php echo get_field('documentos_constitutivos'); ?></li>
-                    </ul>
+                	<div class="col-md-12">
+                        <div class="table-responsivex">
+                            <table class="table table-condensed table-striped infosociedad">
+                              <tr>
+                                <td width="50%"><span>Razon Social</span><div class="clear"></div><?php echo get_field('razon_social'); ?></td>
+                                <td width="50%"><span>R.U.T.</span><div class="clear"></div><?php echo get_field('rut'); ?></td>
+                              </tr>
+                              <tr>
+                                <td><span>Nombre de Fantasía</span><div class="clear"></div><?php echo get_field('nombre_de_fantasia'); ?></td>
+                                <td><span>Tipo de Entidad</span><div class="clear"></div><?php echo get_field('tipo_entidad'); ?></td>
+                              </tr>
+                              <tr>
+                                <td><span>Domicilio Legal</span><div class="clear"></div><?php echo get_field('domicilio_legal'); ?></td>
+                                <td><span>Información de contacto para Accionistas</span><div class="clear"></div><?php echo get_field('info_de_contacto'); ?></td>
+                              </tr>
+                              <tr>
+                                <td><span>Inscripción</span><div class="clear"></div><?php echo get_field('inscripcion'); ?></td>
+                                <td><span>Documentos Constitutivos</span><div class="clear"></div><?php echo get_field('documentos_constitutivos'); ?></td>
+                              </tr>
+                            </table>
+                        </div>
+                  	</div>
+                    
+                    
                 </div>
             </section>
 
@@ -63,13 +75,13 @@
             </section>
 
 
-
+			<?php /*?>
             <section class="reporte">
                 <h3>Reporte Anual</h3>
 
                 <section class="slide">
                     <ul class="bxslider-interior">
-                        <?php /* query_posts(array('post_type' =>'accionistas'));
+                        <?php  query_posts(array('post_type' =>'accionistas'));
                         if (have_posts()) : while (have_posts()) : the_post(); ?>
                             <?php $reportes = get_order_group('reporte_anual_bajada');
                             foreach($reportes as $reporte){ ?>
@@ -81,12 +93,13 @@
                             <?php } ?>
                         
                         <?php endwhile; else: ?>
-                        <?php endif;  */?>   
+                        <?php endif;  ?>   
 
                         
                     </ul>
                 </section> <!--Slide-->
             </section>
+            <?php */?>
         </div>
 
         <?php /* query_posts(array('post_type' =>'accionistas'));

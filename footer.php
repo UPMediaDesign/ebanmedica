@@ -118,12 +118,13 @@
     <script src="<?php bloginfo('template_url'); ?>/js/vendor/flowtype.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.bxslider.min.js"></script>
     <script type="text/javascript" language="javascript" src="<?php bloginfo('template_url'); ?>/js/vendor/jquery.carouFredSel-6.2.1-packed.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
-    <script>
+    <?php if(is_page_template('page-tabla.php')){?>
+	<script>
         $('.table-responsive table').addClass('table table-bordered')
     </script> 
-    
+    <?php }?>
     <?php if(is_page(68)){?>
     <script>
 		$('.hashmenu').click(function(event) {

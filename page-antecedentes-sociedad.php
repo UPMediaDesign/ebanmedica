@@ -72,10 +72,10 @@
                             <?php $antecedentes = $decada['antecedentes'];?>
                             <?php foreach($antecedentes as $antecedente): ?>
                                 <li>
-                                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
                                         <h5><?php echo $antecedente['año'] ?></h5>
                                     </div>
-                                    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                                    <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
                                         <?php echo $antecedente['antecedentes'] ?>
                                     </div>
                                     <br class="clear">
@@ -90,5 +90,4 @@
         </div><!--container-->
     </section>
 	
-
 <?php get_footer(); ?>
